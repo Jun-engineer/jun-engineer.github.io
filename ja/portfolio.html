@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>南木 潤 | ポートフォリオ</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "ＭＳ Ｍincho", serif;
+      background: #f4f4f4;
+    }
+    .section {
+      padding: 60px 0;
+    }
+    footer {
+      background: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      display: none;
+      z-index: 100;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
+    /* Skill Card */
+    .skill-card {
+      min-height: 250px;
+    }
+    /* Project Card */
+    .card-img-top {
+      max-height: 300px;
+      object-fit: cover;
+    }
+    /* Language Switcher */
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+    .language-switcher a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">南木 潤</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションを切り替える">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">自己紹介</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">スキル</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certifications">資格</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">プロジェクト</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">お問い合わせ</a>
+          </li>
+          <!-- Language Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              言語
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="../en/portfolio.html">英語</a></li>
+              <li><a class="dropdown-item" href="../ja/portfolio.html">日本語</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container text-center">
+      <h2>自己紹介</h2>
+      <p class="lead">
+        南木 潤（なんもく じゅん）です。<br>
+        AWS環境の設計開発を4年間担当してきました。<br>
+        Infrastructure as Code（CDK／CloudFormation / Terraform）をはじめ、ネットワーク構築やセキュリティが得意分野です。<br>
+        インフラ技術やプログラミング言語等問わず、常に最新の技術を学び、自己研鑽に努めています。<br>
+        また、業務効率化のための自動化ツール開発や、社内システムの改善にも積極的に取り組んでいます。<br>
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>スキル</h2>
+      </div>
+      <div class="row">
+        <!-- Skill Category 1: Frontend Development -->
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm skill-card">
+            <div class="card-body">
+              <h5 class="card-title">Frontend Development</h5>
+              <ul class="list-unstyled">
+                <li>HTML / CSS / Bootstrap</li>
+                <li>TypeScript / JavaScript</li>
+                <li>React.js</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Category 2: Backend Development -->
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm skill-card">
+            <div class="card-body">
+              <h5 class="card-title">Backend Development</h5>
+              <ul class="list-unstyled">
+                <li>Next.js / Node.js / Express.js</li>
+                <li>Golang / Gin</li>
+                <li>Python / FastAPI</li>
+                <li>Java / SpringBoot / Thymeleaf</li>
+                <li>SQL</li>
+                <li>PostgreSQL / OracleDB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Category 3: Cloud, DevOps & Containerization -->
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm skill-card">
+            <div class="card-body">
+              <h5 class="card-title">Cloud & DevOps</h5>
+              <ul class="list-unstyled">
+                <li>AWS / GCP</li>
+                <li>CDK / CloudFormation</li>
+                <li>Terraform</li>
+                <li>Git / GitHub / GitLab</li>
+                <li>Docker / Kubernetes</li>
+                <li>CI/CD</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Category 4: Infrastructure & Tools -->
+        <div class="col-md-3">
+          <div class="card mb-4 shadow-sm skill-card">
+            <div class="card-body">
+              <h5 class="card-title">Infrastructure & Tools</h5>
+              <ul class="list-unstyled">
+                <li>Linux</li>
+                <li>Networking</li>
+                <li>Security</li>
+                <li>Scripting</li>
+                <li>PowerShell</li>
+                <li>PowerPlatform</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>資格</h2>
+      </div>
+      <div class="row">
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="2cb44b4a-6f6b-40bb-95ef-9cf9261863b0" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Solutions Architect – Professional</h5>
+                  <p class="card-text">Date issued: February 25, 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="f1da416a-11ee-4c5d-958e-c165892aa82d" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Data Analytics – Specialty</h5>
+                  <p class="card-text">Date issued: March 24, 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="9a77e83e-1429-47c3-a580-9250c0b525e2" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Database – Specialty</h5>
+                  <p class="card-text">Date issued: April 29, 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ddfb8674-38d3-47f4-9dd3-4c4de899ce74" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Security – Specialty</h5>
+                  <p class="card-text">Date issued: December 09, 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="262d6a2a-8164-4559-b703-ca4609a476db" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Solutions Architect – Associate</h5>
+                  <p class="card-text">Date issued: February 11, 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="f021d5d6-32a9-4c6d-a241-be6c0a3f9653" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Developer – Associate</h5>
+                  <p class="card-text">Date issued: November 19, 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ef86f46e-4484-4ed5-94fb-7b8cf15a21d7" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">AWS Certified Cloud Practitioner</h5>
+                  <p class="card-text">Date issued: October 29, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="30dd2ee3-26a5-45a4-8921-c9b06210a563" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">LPIC-1</h5>
+                  <p class="card-text">Date issued: December 17, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="a7324cfa-36cb-47c1-b54b-fdadde4fba54" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">Cisco Certified Network Associate</h5>
+                  <p class="card-text">Date issued: July 29, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Certification Card -->
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <!-- Left: Badge Embed -->
+                <div class="col-auto">
+                  <div style="width:150px; height:277px; border: 1px solid #ddd; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
+                    No badge available
+                  </div>
+                </div>
+                <!-- Right: Certification Details -->
+                <div class="col">
+                  <h5 class="card-title">ORACLE MASTER Bronze DBA 2019</h5>
+                  <p class="card-text">Date issued: January 14, 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>個人プロジェクト</h2>
+        <p class="lead">これまで個人で取り組んできたプロジェクトです。</p>
+      </div>
+      <div class="row">
+        <!-- ポートフォリオ -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/portfolio.jpg" class="card-img-top" alt="ポートフォリオ">
+            <div class="card-body">
+              <h5 class="card-title">ポートフォリオサイト</h5>
+              <p class="card-text">
+                言語: HTML / Bootstrap / CSS / JavaScript<br>
+                データベース: 該当なし (静的サイト)<br>
+                ホスティング: GitHub Pages<br>
+                機能・特徴: 経歴・スキル・資格・プロジェクトを日英対応で紹介し、レスポンシブなレイアウトとスムーズなナビゲーションを備えています。<br>
+              </p>
+              <a href="https://github.com/Jun-engineer/portfolio" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                ポートフォリオのリポジトリを見る
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Idea Bridge -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/idea_bridge.jpg" class="card-img-top" alt="Idea Bridge">
+            <div class="card-body">
+              <h5 class="card-title">Idea Bridge</h5>
+              <p class="card-text">
+                言語: React (TypeScript) / Express (TypeScript)<br>
+                データベース: PostgreSQL (Prisma) + DynamoDB バックの認証ストア<br>
+                ホスティング: AWS CloudFront + S3 (フロントエンド) / AWS Lambda + API Gateway (バックエンド) / Expo EAS (モバイル)<br>
+                機能・特徴: アイデア提供者と開発者を結びつけるプラットフォームで、キュレーションされたアイデアフィード、投稿ワークフロー、リッチなプロフィール、SMS 認証、アカウント管理、サーバーレス CI/CD を備えています。<br>
+              </p>
+              <a href="https://d3lq35g6m29rn7.cloudfront.net" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Web アプリを見る
+              </a>
+              <a href="https://github.com/Jun-engineer/idea-bridge" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 日本のバー ホームページ -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/bar.jpg" class="card-img-top" alt="日本のバー ホームページ">
+            <div class="card-body">
+              <h5 class="card-title">日本のバー ホームページ</h5>
+              <p class="card-text">
+                言語: HTML / Bootstrap / CSS / JavaScript<br>
+                データベース: 該当なし (静的サイト)<br>
+                ホスティング: GitHub Pages<br>
+                機能・特徴: 日英の二言語でメニューや店舗情報を紹介し、完全レスポンシブな構成でバーの魅力を発信するマーケティングサイトです。<br>
+              </p>
+              <a href="https://d207y99b8y9l85.cloudfront.net/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Web アプリを見る
+              </a>
+              <a href="https://github.com/Jun-engineer/heros-bar" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 在庫・受発注・原価管理システム -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/inventory_management_system.jpg" class="card-img-top" alt="在庫管理システム">
+            <div class="card-body">
+              <h5 class="card-title">在庫・受発注・原価管理システム</h5>
+              <p class="card-text">
+                言語: Next.js (TypeScript) / Gin (Golang)<br>
+                データベース: PostgreSQL<br>
+                ホスティング: Vercel (フロントエンド) / GCP Cloud Run (バックエンド) / Neon (データベース)<br>
+                機能・特徴: マルチテナント対応で在庫・受発注・原価を一括管理し、リアルタイム在庫追跡、社内間ワークフロー、ダッシュボード分析を提供します。※ 本サービスは Google Cloud Run 上で稼働しており、初回アクセス時はコールドスタートにより数秒かかる場合があります。<br>
+              </p>
+              <a href="https://inventory-management-sooty-zeta.vercel.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Web アプリを見る
+              </a>
+              <a href="https://github.com/Jun-engineer/inventory-management" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- サブスクリプション支出管理 -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/subscription_expenses_manager.jpg" class="card-img-top" alt="サブスクリプション支出管理">
+            <div class="card-body">
+              <h5 class="card-title">サブスクリプション支出管理</h5>
+              <p class="card-text">
+                言語: Next.js (TypeScript) / FastAPI (Python)<br>
+                データベース: PostgreSQL<br>
+                ホスティング: Vercel (フロントエンド) / GCP Cloud Run (バックエンド) / Neon (データベース)<br>
+                機能・特徴: 月単位の課金周期でサブスクリプションを管理し、ダッシュボード分析や支払いリマインダー、Cookie ベース認証による安全なアクセス制御を提供します。※ 本サービスは Google Cloud Run 上で稼働しており、初回アクセス時はコールドスタートにより数秒かかる場合があります。<br>
+              </p>
+              <a href="https://subscription-expenses-manager.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Web アプリを見る
+              </a>
+              <a href="https://github.com/Jun-engineer/subscription-expenses-manager" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Knowledge Tracker -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/knowledge_tracker.jpg" class="card-img-top" alt="Knowledge Tracker">
+            <div class="card-body">
+              <h5 class="card-title">Knowledge Tracker</h5>
+              <p class="card-text">
+                言語: Spring Boot 3 (Java 17) / Thymeleaf (サーバーレンダリング HTML) / REST API<br>
+                データベース: PostgreSQL<br>
+                ホスティング: GCP Cloud Run (アプリ) / Neon (データベース)<br>
+                機能・特徴: 学習リソースをタグ・ステータス・お気に入り・学習時間で管理し、FTS 検索、CSV エクスポート、ダッシュボード、JWT 認証、REST API ドキュメント、ソフトデリートと復元機能を備えています。※ 本サービスは Google Cloud Run 上で稼働しており、初回アクセス時はコールドスタートにより数秒かかる場合があります。<br>
+              </p>
+              <a href="https://knowledge-tracker-458410750257.asia-northeast1.run.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Web アプリを見る
+              </a>
+              <a href="https://github.com/Jun-engineer/knowledge-tracker" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Sports Rules Companion -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/sports-rules-companion.jpg" class="card-img-top" alt="Sports Rules Companion">
+            <div class="card-body">
+              <h5 class="card-title">スポーツ用語・ルール辞典</h5>
+              <p class="card-text">
+                言語: FastAPI (Python 3.11) / Next.js 14 (TypeScript, React 18, SSR/SSG) / REST API<br>
+                データベース: PostgreSQL (FTS + GIN インデックス)<br>
+                ホスティング: Vercel (フロントエンド) / Fly.io (API) / Neon (データベース)<br>
+                機能・特徴: 翻訳レビューのメタデータ付き英日用語とスターターガイドを提供し、ハイライト付き FTS 検索、JWT 認証、REST API ドキュメント、Alembic マイグレーション、Docker 化開発、ルートマッピングによる言語選択保持を実装しています。<br>
+              </p>
+              <a href="https://sports-rules-companion.vercel.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Web アプリを見る
+              </a>
+              <a href="https://github.com/Jun-engineer/sports-rules-companion" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Serverless VPN Control (JP) -->
+        <div class="col-12">
+          <div class="card mb-4 shadow-sm">
+            <img src="../photo/serverless-vpn-control.jpg" class="card-img-top" alt="Serverless VPN Control 管理画面">
+            <div class="card-body">
+              <h5 class="card-title">サーバーレス VPN コントロール</h5>
+              <p class="card-text">
+                言語: TypeScript / Python 3.12<br>
+                データベース: 該当なし<br>
+                ホスティング: AWS API Gateway + Lambda + EventBridge + IAM + CloudWatch / AWS S3 + CloudFront / AWS SNS / AWS Systems Manager (SSM)<br>
+                機能・特徴: ブラウザから WireGuard VPN を起動・停止・状態監視し、ピア登録まで行える管理ツール。メンテナンス時間帯の制御、起動通知 (SNS)、SSM 経由の自動 IP 割り当て付きピア登録、API キーで保護された管理 UI などを実装。<br>
+                <em>本番環境は招待制のためポートフォリオには URL を掲載していません。</em><br>
+              </p>
+              <a href="https://github.com/Jun-engineer/vpn-server" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub リポジトリ
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container text-center">
+      <h2>お問い合わせ</h2>
+      <p class="lead">
+        ご質問やお仕事の依頼がありましたら、以下の連絡先までお気軽にご連絡ください。
+      </p>
+      <p>
+        <!-- Email -->
+        <a href="mailto:jun.nammoku@gmail.com" class="mx-3" title="Email">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/jun40334/" target="_blank" rel="noopener noreferrer" class="mx-3" title="Instagram">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/jun-nammoku-445492349/" target="_blank" rel="noopener noreferrer" class="mx-3" title="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/Jun-engineer" target="_blank" rel="noopener noreferrer" class="mx-3" title="GitHub">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="btn btn-primary">&uarr;</button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- <p>&copy; 2025 Jun Nammoku. All rights reserved.</p> -->
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    // Scroll to Top Button functionality
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
