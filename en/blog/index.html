@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jun Nammoku | Tech Blog</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-8oy1F0rEwSxbFzNw2K6JqqPiR+jYwIV/pY5Pja/qvpDMAYA9Yg3gCBXlI3VzBkYOPxfN3E3xaQa58ae0Zj6aZA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand-mark" href="/index.html">Jun Nammoku</a>
+      <nav class="nav-group" aria-label="Primary">
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="blog-navigation">
+          Menu
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="nav-links" id="blog-navigation" data-nav-menu>
+          <a href="/index.html">Home</a>
+          <a href="/en/portfolio/">Portfolio</a>
+          <a href="/en/blog/" aria-current="page">Blog</a>
+          <a href="/index.html#contact">Contact</a>
+        </div>
+      </nav>
+      <div class="language-switcher" aria-label="Language switcher">
+        <span>Language</span>
+        <a href="/en/blog/">EN</a>
+        <a href="/ja/blog/">JA</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero blog-hero" id="blog-hero">
+      <div class="container hero-grid blog-hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Tech Blog</p>
+          <h1 class="hero-title">Engineering notes &amp; playbooks</h1>
+          <p class="hero-subtitle">
+            Deep dives on building resilient platforms, automation blueprints, and lessons learned from real-world incidents. Expect concise walkthroughs with architecture diagrams, guardrails, and code-ready snippets.
+          </p>
+          <div class="hero-actions">
+            <a class="cta-button primary" href="#posts">Browse latest posts</a>
+            <a class="cta-button ghost" href="#newsletter">Request a topic</a>
+          </div>
+        </div>
+        <div class="hero-pane" aria-label="Blog focus areas">
+          <h2>Publishing themes</h2>
+          <ul class="hero-list">
+            <li>Operations stories from regulated AWS environments</li>
+            <li>Infrastructure as Code patterns across CDK, Terraform, and Pulumi</li>
+            <li>Observability guardrails, cost controls, and platform governance</li>
+          </ul>
+          <div class="hero-metrics">
+            <div class="metric-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i> Architecture retros</div>
+            <div class="metric-chip"><i class="fas fa-bolt" aria-hidden="true"></i> Automation workflows</div>
+            <div class="metric-chip"><i class="fas fa-shield" aria-hidden="true"></i> Security guardrails</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-controls" id="filters">
+      <div class="container">
+        <div class="blog-control-panel">
+          <form class="blog-search" role="search">
+            <label class="sr-only" for="blog-search-input">Search articles</label>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input id="blog-search-input" type="search" name="search" placeholder="Search architectures, IaC, incident reviews..." autocomplete="off">
+            <button type="submit">Search</button>
+          </form>
+          <div class="tag-stack" aria-label="Trending tags">
+            <span class="tag-stack-label">Trending tags</span>
+            <ul class="tag-list" role="list">
+              <li><button type="button" class="tag-pill is-active" aria-pressed="true">AWS</button></li>
+              <li><button type="button" class="tag-pill" aria-pressed="false">IaC</button></li>
+              <li><button type="button" class="tag-pill" aria-pressed="false">Security</button></li>
+              <li><button type="button" class="tag-pill" aria-pressed="false">Operations</button></li>
+              <li><button type="button" class="tag-pill" aria-pressed="false">Serverless</button></li>
+              <li><button type="button" class="tag-pill" aria-pressed="false">Observability</button></li>
+              <li><button type="button" class="tag-pill" aria-pressed="false">Culture</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-feed" id="posts">
+      <div class="container">
+        <div class="blog-layout">
+          <div class="post-feed">
+            <article class="post-card placeholder">
+              <div class="post-link" aria-label="No posts yet">
+                <div class="post-meta">
+                  <span>Status</span>
+                  <span>Publishing soon</span>
+                </div>
+                <h2 class="post-title">No articles published yet</h2>
+                <p class="post-description">
+                  Add your first post entry here once you have a draft ready. Duplicate this card and replace the title, metadata, description, and tags with your article details.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="blog-sidebar" aria-label="Blog sidebar">
+            <div class="sidebar-card">
+              <h3>Trending on the blog</h3>
+              <p>No trending posts yet. Highlight your popular articles here once you publish.</p>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Series &amp; collections</h3>
+              <p>Create curated lists (e.g., multi-part guides) and add them here for quick navigation.</p>
+            </div>
+
+            <div class="sidebar-card subscribe-card">
+              <h3>Get new posts</h3>
+              <p>Receive fresh architecture guides and incident notes directly in your inbox.</p>
+              <form>
+                <label class="sr-only" for="subscribe-email">Email address</label>
+                <input id="subscribe-email" type="email" name="email" placeholder="jon@example.com" autocomplete="email">
+                <button type="submit">Subscribe</button>
+              </form>
+              <small>Zero spam. Unsubscribe anytime.</small>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-footer-cta" id="newsletter">
+      <div class="container">
+        <div class="blog-footer-card">
+          <h2>Have a challenge worth dissecting?</h2>
+          <p>
+            Share the context behind your next migration, incident, or platform initiative. I love turning real-world constraints into shareable patterns others can reuse.
+          </p>
+          <div class="footer-cta-actions">
+            <a class="cta-button primary" href="mailto:jun.nammoku@gmail.com">Pitch a story</a>
+            <a class="cta-button ghost" href="/index.html#contact">Book a consult</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scrollTopBtn" type="button" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jun Nammoku. Built with curiosity and automation.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
