@@ -38,7 +38,11 @@ layout: layouts/base.njk
   {% set discussCtaSecondary = 'ポートフォリオを見る' %}
   {% set dateFormat = 'yyyy年MM月dd日' %}
 {% endif %}
-{% set languageCurrent = isEnglish ? 'EN' : 'JA' %}
+{% if isEnglish %}
+  {% set languageCurrent = 'EN' %}
+{% else %}
+  {% set languageCurrent = 'JA' %}
+{% endif %}
 {% set formattedDate = page.date | date(dateFormat) %}
 <header class="site-header">
   <div class="container nav-shell">

@@ -105,6 +105,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 18px 0;
+  min-height: 80px;
 }
 
 .nav-group {
@@ -116,11 +117,15 @@ main {
 }
 
 .brand-mark {
-  font-size: 1rem;
-  letter-spacing: 0.14em;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--color-text);
+  padding: 4px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.55);
 }
 
 .nav-links {
@@ -128,6 +133,27 @@ main {
   align-items: center;
   gap: 28px;
   flex-wrap: nowrap;
+}
+
+.nav-links-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-group-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.65);
+  white-space: nowrap;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(148, 163, 184, 0.22);
+  flex-shrink: 0;
 }
 
 .nav-links a {
@@ -164,7 +190,7 @@ main {
 
 .nav-toggle {
   display: none;
-  background: none;
+    top: calc(100% + 12px);
   border: 1px solid rgba(148, 163, 184, 0.3);
   border-radius: 999px;
   color: var(--color-text);
@@ -176,6 +202,24 @@ main {
   align-items: center;
   gap: 14px;
   margin-left: 20px;
+
+  .nav-links-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .nav-group-label {
+    font-size: 0.7rem;
+    color: rgba(148, 163, 184, 0.7);
+  }
+
+  .nav-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.22);
+  }
   padding-left: 20px;
   border-left: 1px solid rgba(148, 163, 184, 0.18);
 }
@@ -1359,7 +1403,7 @@ main {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 64px;
+    top: calc(100% + 12px);
     right: 24px;
     width: min(300px, calc(100vw - 48px));
     flex-direction: column;
