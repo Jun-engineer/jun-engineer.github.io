@@ -119,7 +119,7 @@ lang: en
                 </div>
                 <h2 class="post-title">No articles published yet</h2>
                 <p class="post-description">
-                  Add your first post by creating a Markdown file in <code>src/en/blog/posts/</code>. It will appear here automatically after running <code>npm run build</code>.
+                  The first batch of articles is in production—check back soon for fresh engineering deep dives.
                 </p>
               </div>
             </article>
@@ -139,7 +139,7 @@ lang: en
                 {% endfor %}
               </ol>
             {% else %}
-              <p>No trending posts yet. Highlight your popular articles here once you publish.</p>
+              <p>Trending posts will appear here once the first stories go live. Stay tuned.</p>
             {% endif %}
           </div>
 
@@ -152,20 +152,10 @@ lang: en
                 {% endfor %}
               </ul>
             {% else %}
-              <p>Create curated lists (e.g., multi-part guides) and add them here for quick navigation.</p>
+              <p>Series and curated collections launch soon. Watch this space for guided reading paths.</p>
             {% endif %}
           </div>
 
-          <div class="sidebar-card subscribe-card">
-            <h3>Get new posts</h3>
-            <p>Receive fresh architecture guides and incident notes directly in your inbox.</p>
-            <form>
-              <label class="sr-only" for="subscribe-email">Email address</label>
-              <input id="subscribe-email" type="email" name="email" placeholder="jon@example.com" autocomplete="email">
-              <button type="submit">Subscribe</button>
-            </form>
-            <small>Zero spam. Unsubscribe anytime.</small>
-          </div>
         </aside>
       </div>
     </div>

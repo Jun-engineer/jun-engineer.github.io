@@ -818,6 +818,7 @@ main {
   background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.2), transparent 55%);
   opacity: 0;
   transition: var(--transition);
+  pointer-events: none;
 }
 
 .post-card:hover {
