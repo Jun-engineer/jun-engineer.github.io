@@ -53,9 +53,7 @@ layout: layouts/base.njk
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
       <div class="nav-links" id="post-navigation" data-nav-menu>
-        <a href="{{ homeHref }}">{% if isEnglish %}Home{% else %}ホーム{% endif %}</a>
         <a href="{{ portfolioHref }}">{% if isEnglish %}Portfolio{% else %}ポートフォリオ{% endif %}</a>
-        <a href="{{ blogHref }}" aria-current="page">{% if isEnglish %}Blog{% else %}ブログ{% endif %}</a>
         <a href="{{ contactHref }}">{% if isEnglish %}Contact{% else %}お問い合わせ{% endif %}</a>
         <div class="nav-language" aria-label="{{ languageLabel }}">
           <span class="nav-language-label">{{ languageLabel }}</span>
