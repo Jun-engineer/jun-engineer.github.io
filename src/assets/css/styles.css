@@ -112,6 +112,7 @@ main {
   align-items: center;
   gap: 18px;
   position: relative;
+  margin-left: auto;
 }
 
 .brand-mark {
@@ -126,6 +127,7 @@ main {
   display: flex;
   align-items: center;
   gap: 28px;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
@@ -169,31 +171,54 @@ main {
   padding: 8px 14px;
   font-size: 0.9rem;
 }
-
-.language-switcher {
+.nav-language {
   display: flex;
-  gap: 12px;
   align-items: center;
+  gap: 14px;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(148, 163, 184, 0.18);
 }
 
-.language-switcher span {
+.nav-language-label {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.16em;
+  white-space: nowrap;
 }
 
-.language-switcher a {
+.nav-language-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.nav-language-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.9rem;
   color: var(--color-text);
   border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 999px;
   padding: 6px 14px;
+  text-transform: uppercase;
+  min-width: 44px;
 }
 
-.language-switcher a:hover {
+.nav-language-link:hover,
+.nav-language-link:focus-visible {
   background: rgba(56, 189, 248, 0.14);
   border-color: rgba(56, 189, 248, 0.45);
+}
+
+.nav-language-link.is-active,
+.nav-language-link[aria-current="page"] {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.55);
+  color: var(--color-accent);
 }
 
 .hero {
@@ -1336,6 +1361,7 @@ main {
     position: absolute;
     top: 64px;
     right: 24px;
+    width: min(300px, calc(100vw - 48px));
     flex-direction: column;
     align-items: flex-start;
     background: rgba(2, 6, 23, 0.92);
@@ -1355,6 +1381,30 @@ main {
     align-items: center;
     gap: 0.4rem;
     color: var(--color-text-muted);
+    margin-left: auto;
+  }
+
+  .nav-language {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-left: none;
+    border-top: 1px solid rgba(148, 163, 184, 0.22);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .nav-language-options {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-language-link {
+    flex: 1 1 0;
+    justify-content: center;
   }
 
   .hero-actions {

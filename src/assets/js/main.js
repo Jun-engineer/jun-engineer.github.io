@@ -8,6 +8,15 @@
       navToggle.setAttribute('aria-expanded', String(!expanded));
       navMenu.classList.toggle('is-open');
     });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('is-open')) {
+          navMenu.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   }
 
   const scrollTopBtn = document.getElementById('scrollTopBtn');
