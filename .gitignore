@@ -1,0 +1,6 @@
+node_modules/
+_site/
+
+# Local sample drafts (kept for reference, never pushed)
+src/en/blog/posts/sample-draft.md
+src/ja/blog/posts/sample-draft.md
