@@ -82,6 +82,10 @@ img {
   border: 0;
 }
 
+.is-hidden {
+  display: none !important;
+}
+
 main {
   display: block;
 }
