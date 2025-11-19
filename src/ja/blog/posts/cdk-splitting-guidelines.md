@@ -47,12 +47,16 @@ CloudFormation には **1 スタックあたり 500 リソース**というハ�
 
 25 以上のスタックを破綻なく運用できた構成例です。
 
+<div class="table-scroll">
+
 | レイヤー | 代表スタック | 目的 | 典型的な更新頻度 |
 | --- | --- | --- | --- |
 | **基盤** | `NetworkStack`, `SharedSecurityStack` | VPC、ルーティング、IAM ガードレール、KMS キー | 月 1 回 |
 | **共通サービス** | `ObservabilityStack`, `ArtifactStoreStack`, `MessagingStack` | SNS/SQS、EventBridge、ログ基盤、アーティファクトバケット | 隔週 |
 | **業務ドメイン** | `PaymentsApiStack`, `IdentityServiceStack`, `BatchJobsStack` | アプリコード、Lambda/ECS、データベース | 毎日 |
 | **エッジ/UX** | `PublicWebStack`, `CloudFrontStack` | CloudFront、WAF、Route 53 | 週 1 回 |
+
+</div>
 
 更新頻度の高いアプリケーションコードと、めったに変更しない共有基盤を切り離すのがポイントです。
 

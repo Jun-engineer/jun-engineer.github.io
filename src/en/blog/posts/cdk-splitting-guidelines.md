@@ -47,12 +47,16 @@ When you design a multi-stack CDK architecture, start with three principles:
 
 The table below shows a pattern that allowed us to scale to 25+ stacks without losing our minds.
 
+<div class="table-scroll">
+
 | Layer | Example stacks | Purpose | Typical cadence |
 | --- | --- | --- | --- |
 | **Foundations** | `NetworkStack`, `SharedSecurityStack` | VPCs, routing, IAM guardrails, KMS keys | Monthly |
 | **Platform services** | `ObservabilityStack`, `ArtifactStoreStack`, `MessagingStack` | Shared SNS/SQS, EventBridge, logging, S3 artifact buckets | Bi-weekly |
 | **Domain workloads** | `PaymentsApiStack`, `IdentityServiceStack`, `BatchJobsStack` | App code, Lambda functions, ECS services, databases | Daily |
 | **Edge & UX** | `PublicWebStack`, `CloudFrontStack` | CloudFront, WAF, Route 53 | Weekly |
+
+</div>
 
 This layout keeps high-churn application code separate from infrastructure that rarely changes.
 
