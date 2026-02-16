@@ -330,6 +330,55 @@ main {
   background: rgba(148, 163, 184, 0.12);
 }
 
+.hero-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 6vw, 3.5rem);
+  align-items: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.hero-intro .hero-copy {
+  flex: 1 1 320px;
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--color-border);
+}
+
+.profile-photo-sm {
+  width: 180px;
+  height: 180px;
+}
+
+.profile-photo-md {
+  width: 240px;
+  height: 240px;
+}
+
+@media (max-width: 640px) {
+  .hero-intro {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .hero-intro .hero-actions {
+    justify-content: center;
+  }
+  
+  .profile-photo-sm {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 .stat-grid {
   display: grid;
   gap: 18px;
