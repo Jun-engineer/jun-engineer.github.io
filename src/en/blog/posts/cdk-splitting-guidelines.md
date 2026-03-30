@@ -14,13 +14,13 @@ permalink: /en/blog/cdk-splitting-guidelines/
 
 ## Why splitting CDK apps matters
 
-AWS CloudFormation enforces a hard limit of **500 resources per stack**. Large programs can hit that ceiling quickly—especially when you duplicate infrastructure across multiple AWS accounts and Regions. Even before you reach the limit, monolithic stacks slow down deployments and make blast radius hard to reason about.
+AWS CloudFormation enforces a hard limit of **500 resources per stack**. Large programs can hit that ceiling quickly—especially when you duplicate infrastructure across multiple AWS accounts and Regions. Even before you reach the limit, monolithic stacks slow down deployments and make the blast radius hard to reason about.
 
 In our government cloud migration, the initial goal was simple: “Ship everything from one CDK app.” Six months later, that app handled:
 
 - Four independent pipelines (unit, integration, external-integration, production) pointed at the same monolithic stack, so every change meant duplicating approvals and shepherding four identical runs.
 - Networking, security, compute, messaging, analytics—every shared platform concern—lived in one stack, making each `cdk diff` sprawling and risk-prone.
-- At peak the template exceeded the 500-resource limit; because each environment consumed the same synthesized stack, the blast radius was immediate across all accounts.
+- At peak, the template exceeded the 500-resource limit; because each environment consumed the same synthesized stack, the blast radius was immediate across all accounts.
 
 Individual deploys were tolerable on their own, but coordinating four pipelines per change and untangling giant `cdk diff`s drained entire evenings. Splitting stacks restored sanity.
 
@@ -76,35 +76,42 @@ Prefer these patterns instead:
 Without orchestration, `cdk deploy` on dozens of stacks devolves into guesswork. These are the guardrails we implemented:
 
 1. **Directed deployment graph**: Represent stack dependencies explicitly in code:
-   ```ts
-   const network = new NetworkStack(app, 'Network', { env });
-   const shared = new SharedServicesStack(app, 'Shared', {
-     env,
-     vpc: network.vpc,
-   });
-   shared.addDependency(network);
-   const payments = new PaymentsStack(app, 'Payments', {
-     env,
-     sharedResources: shared.outputs,
-   });
-   payments.addDependency(shared);
-   ```
-   CDK respects `addDependency`, so manual deploys follow the graph automatically.
+
+```ts
+const network = new NetworkStack(app, 'Network', { env });
+
+const shared = new SharedServicesStack(app, 'Shared', {
+  env,
+  vpc: network.vpc,
+});
+shared.addDependency(network);
+
+const payments = new PaymentsStack(app, 'Payments', {
+  env,
+  sharedResources: shared.outputs,
+});
+payments.addDependency(shared);
+```
+
+CDK respects `addDependency`, so manual deploys follow the graph automatically.
 
 2. **Environment matrix builds**: In CI/CD (GitHub Actions, CodePipeline, GitLab CI), treat each environment as a stage. Example matrix: `{ env: dev, stacks: [network, shared, payments] }` flowing into `{ env: prod, stacks: [...] }`. Block promotion unless every stack in the previous stage passes.
 
 3. **Config-driven order**: Version control a manifest (YAML/JSON) that lists stacks per environment:
-   ```yaml
-   dev:
-     - network
-     - shared
-     - payments
-   prod:
-     - network
-     - shared
-     - payments
-   ```
-   Deployment jobs consume the manifest, ensuring humans and automation match.
+
+```yaml
+dev:
+  - network
+  - shared
+  - payments
+
+prod:
+  - network
+  - shared
+  - payments
+```
+
+Deployment jobs consume the manifest, ensuring humans and automation match.
 
 4. **Failure isolation**: Use `cdk deploy stackA stackB` rather than `cdk deploy "*"`. When a stack fails, downstream stacks are never started, keeping environments consistent.
 
@@ -122,7 +129,7 @@ Splitting stacks highlights the difference between source code ownership and inf
 ## Operational tips from the field
 
 - **100-stack log platform reality**: In our logging estate we managed more than 100 stacks, most generated from the same CDK app. Each stack handled a slice of log ingestion (regional partitions, retention profiles, and analytics feeds). The pattern scaled because we kept the app itself single-sourced; only configuration changed per stack.
-- **Isolate KMS stacks**: We carved KMS keys into their own CDK app. Deleting a key demands a seven-day wait, and cross-Region replicas inherit the source key ID. When a non-primary Region deploy failed, that replica ID was stuck unless we destroyed and redeploy primary key. Now we deploy main-Region keys first, verify them, and only then roll out the DR stack as a second pass.
+- **Isolate KMS stacks**: We carved KMS keys into their own CDK app. Deleting a key demands a seven-day wait, and cross-Region replicas inherit the source key ID. When a non-primary Region deploy failed, that replica ID was stuck unless we destroyed and redeployed the primary key. Now we deploy main-Region keys first, verify them, and only then roll out the DR stack as a second pass.
 - **Bootstrap once per account**: Ensure every AWS account uses the same CDK bootstrap template version. Mismatched bootstrap stacks create permissions issues when stacks assume roles across accounts.
 - **Limit nested stacks**: CDK nested stacks help with organization, but they still count toward the 500-resource limit. Treat them as a tactical tool, not the core split mechanism.
 - **Centralize tagging**: Apply mandatory tags (cost center, owner, data classification) via Aspect so every stack inherits them automatically.

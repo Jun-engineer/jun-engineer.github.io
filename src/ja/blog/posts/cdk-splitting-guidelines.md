@@ -76,34 +76,40 @@ CloudFormation の Export は有効ですが、エクスポート元のスタッ
 オーケストレーションなしに `cdk deploy` を乱発すると、デプロイ順序が属人化します。私たちが導入したガードレールは次の通りです。
 
 1. **依存グラフをコードに埋め込む**:
-   ```ts
-   const network = new NetworkStack(app, "Network", { env });
-   const shared = new SharedServicesStack(app, "Shared", {
-     env,
-     vpc: network.vpc,
-   });
-   shared.addDependency(network);
-   const payments = new PaymentsStack(app, "Payments", {
-     env,
-     sharedResources: shared.outputs,
-   });
-   payments.addDependency(shared);
-   ```
-   `addDependency` を使えば、手動デプロイでも順序を自動で守れます。
+
+```ts
+const network = new NetworkStack(app, "Network", { env });
+
+const shared = new SharedServicesStack(app, "Shared", {
+  env,
+  vpc: network.vpc,
+});
+shared.addDependency(network);
+
+const payments = new PaymentsStack(app, "Payments", {
+  env,
+  sharedResources: shared.outputs,
+});
+payments.addDependency(shared);
+```
+
+`addDependency` を使えば、手動デプロイでも順序を自動で守れます。
 
 2. **環境単位のマトリクスビルド**: CI/CD（GitHub Actions、CodePipeline、GitLab CI など）で環境ごとにステージを分けます。例: `{ env: dev, stacks: [network, shared, payments] }` の完了を確認してから `{ env: prod, stacks: [...] }` へ進む、と設定します。
 
 3. **構成ファイルで順序を管理**: `yaml` や `json` のマニフェストにスタック一覧を記録し、人と自動化が同じ順序を共有します。
-   ```yaml
-   dev:
-     - network
-     - shared
-     - payments
-   prod:
-     - network
-     - shared
-     - payments
-   ```
+
+```yaml
+dev:
+  - network
+  - shared
+  - payments
+
+prod:
+  - network
+  - shared
+  - payments
+```
 
 4. **失敗を局所化**: `cdk deploy stackA stackB` のように対象を明示し、失敗したスタック以降を走らせません。
 

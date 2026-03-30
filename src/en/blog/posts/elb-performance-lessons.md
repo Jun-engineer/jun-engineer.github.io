@@ -33,7 +33,8 @@ Under peak traffic the ALB decided to scale out. During the scale event AWS recy
 1. **Shard by ALB**: We provisioned more than 10 identical ALBs and used Route 53 weighted routing to distribute traffic evenly. Each shard now carries a smaller blast radius.
 2. **Pin Target Groups to a Single ALB**: Every ALB received its own target group pair (HTTP/HTTPS). ECS services registered with exactly one group to avoid cross-ALB surprises.
 3. **Tune Grace Periods**: We increased deregistration delay to 900 seconds and aligned ECS health checks with the same window so connections drain before scale-in/out transitions.
-4. **Health Check SLOs**: We dropped health check timeout to 5 seconds with 2 consecutive failures so unhealthy containers exit rotation faster, limiting cascading retries.
+4. **Pre-warm Before Load Tests**: Before each test we used `modify-load-balancer-attributes` to manually scale the ALB to the expected peak, warming capacity before sudden traffic surges.
+5. **Health Check SLOs**: We dropped health check timeout to 5 seconds with 2 consecutive failures so unhealthy containers exit rotation faster, limiting cascading retries.
 
 ### Observability Checklist
 
@@ -51,7 +52,8 @@ Our NLB shares underlying infrastructure with other tenants. During the performa
 
 1. **Client-Side Exponential Backoff**: We instrumented the application’s HTTPS client with jittered exponential backoff. The first retry waits 100 ms, doubling up to 3 seconds with full jitter to prevent lockstep retry storms.
 2. **Differentiated Timeouts**: TLS handshake timeout was set to 2 seconds while read timeouts remained longer, so the application fails fast on connection pressure.
-3. **Retry Visibility**: Custom metrics record retry counts and latency buckets so we can correlate backoff behavior with customer-facing errors.
+3. **Circuit Breaker**: When the timeout rate exceeds 5%, the breaker opens and pauses new requests for 30 seconds, spreading load across remaining capacity.
+4. **Retry Visibility**: Custom metrics record retry counts and latency buckets so we can correlate backoff behavior with customer-facing errors. Spikes in `TCP_Client_Reset_Count` trigger alerts before customer impact.
 
 ### What Won’t Work
 
