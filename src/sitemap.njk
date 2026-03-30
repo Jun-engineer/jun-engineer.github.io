@@ -1,0 +1,37 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {%- for page in collections.all %}
+  {%- if not page.data.eleventyExcludeFromCollections and not page.data.draft %}
+  <url>
+    <loc>{{ site.url }}{{ page.url }}</loc>
+    <lastmod>{{ page.date | date('yyyy-MM-dd') }}</lastmod>
+    {%- set slug = page.fileSlug %}
+    {%- set pageUrl = page.url %}
+    {%- if '/en/blog/' in pageUrl and slug and slug != 'blog' and slug != '' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/{{ slug }}/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/blog/{{ slug }}/" />
+    {%- elif '/ja/blog/' in pageUrl and slug and slug != 'blog' and slug != '' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/{{ slug }}/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/blog/{{ slug }}/" />
+    {%- elif pageUrl == '/en/blog/' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/blog/" />
+    {%- elif pageUrl == '/ja/blog/' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/blog/" />
+    {%- elif pageUrl == '/en/portfolio/' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/portfolio/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/portfolio/" />
+    {%- elif pageUrl == '/ja/portfolio/' %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/portfolio/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/portfolio/" />
+    {%- endif %}
+  </url>
+  {%- endif %}
+  {%- endfor %}
+</urlset>
