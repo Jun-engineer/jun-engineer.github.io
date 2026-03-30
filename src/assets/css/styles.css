@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap");
+/* Google Fonts loaded via <link> in base.njk for performance */
 
 :root {
   --color-bg-base: #020617;
@@ -393,7 +393,7 @@ main {
   box-shadow: var(--shadow-soft);
 }
 
-.stat-card h3 {
+.stat-card h2 {
   margin: 0 0 6px;
   font-size: 1.4rem;
   font-weight: 600;
@@ -1538,4 +1538,29 @@ main {
   .blog-footer-card {
     padding: 2rem;
   }
+}
+
+/* 404 page */
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.error-page h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-highlight));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.error-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
 }
