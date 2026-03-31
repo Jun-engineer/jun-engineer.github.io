@@ -4,6 +4,7 @@ title: 南木 潤 | テックブログ
 description: 南木 潤による技術ブログ。AWS・ECS・CDK・ロードバランシングなど、実務で得たクラウドインフラの知見を日本語で発信しています。
 lang: ja
 ---
+{% from "icons.njk" import icon %}
 {% set posts = collections.jaPosts %}
 <header class="site-header">
   <div class="container nav-shell">
@@ -11,7 +12,7 @@ lang: ja
     <nav class="nav-group" aria-label="Primary">
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="blog-navigation-ja">
         <span class="nav-toggle-label">メニュー</span>
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        {{ icon("bars") }}
       </button>
       <div class="nav-links" id="blog-navigation-ja" data-nav-menu>
         <div class="nav-links-group" aria-label="セクション">
@@ -58,9 +59,9 @@ lang: ja
           <li>観測性とコスト管理、プラットフォームガードレールの設計</li>
         </ul>
         <div class="hero-metrics">
-          <div class="metric-chip"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> アーキテクチャレビュー</div>
-          <div class="metric-chip"><i class="fa-solid fa-bolt" aria-hidden="true"></i> 自動化ワークフロー</div>
-          <div class="metric-chip"><i class="fa-solid fa-shield" aria-hidden="true"></i> セキュリティ強化施策</div>
+          <div class="metric-chip">{{ icon("diagram-project") }} アーキテクチャレビュー</div>
+          <div class="metric-chip">{{ icon("bolt") }} 自動化ワークフロー</div>
+          <div class="metric-chip">{{ icon("shield") }} セキュリティ強化施策</div>
         </div>
       </div>
     </div>
@@ -71,7 +72,7 @@ lang: ja
       <div class="blog-control-panel">
         <form class="blog-search" role="search">
           <label class="sr-only" for="blog-search-input-ja">記事を検索</label>
-          <i class="fa-solid fa-search" aria-hidden="true"></i>
+          {{ icon("search") }}
           <input id="blog-search-input-ja" type="search" name="search" placeholder="アーキテクチャ、IaC、事後分析などを検索" autocomplete="off">
           <button type="submit">検索</button>
         </form>
@@ -113,7 +114,7 @@ lang: ja
                     </div>
                   {% endif %}
                   <footer>
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    {{ icon("arrow-right") }}
                     <span>{{ post.data.cta | default('記事を読む') }}</span>
                   </footer>
                 </a>
@@ -180,19 +181,19 @@ lang: ja
       <div class="contact-panel">
         <div class="contact-links">
           <a href="mailto:jun.nammoku@gmail.com" title="メール">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            {{ icon("envelope") }}
             <span class="sr-only">メール</span>
           </a>
           <a href="https://www.instagram.com/jun40334/" target="_blank" rel="noopener noreferrer" title="Instagram">
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            {{ icon("instagram") }}
             <span class="sr-only">Instagram</span>
           </a>
           <a href="https://www.linkedin.com/in/jun-nammoku-445492349/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            {{ icon("linkedin") }}
             <span class="sr-only">LinkedIn</span>
           </a>
           <a href="https://github.com/Jun-engineer" target="_blank" rel="noopener noreferrer" title="GitHub">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            {{ icon("github") }}
             <span class="sr-only">GitHub</span>
           </a>
         </div>
@@ -206,7 +207,7 @@ lang: ja
 </main>
 
 <button id="scrollTopBtn" type="button" aria-label="ページトップへ戻る">
-  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  {{ icon("arrow-up") }}
 </button>
 
 <footer class="site-footer">

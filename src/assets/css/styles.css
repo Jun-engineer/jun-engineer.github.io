@@ -1,5 +1,14 @@
 /* Google Fonts loaded via <link> in base.njk for performance */
 
+/* Inline SVG icons (replaces Font Awesome CDN) */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
 :root {
   --color-bg-base: #020617;
   --color-bg-soft: rgba(15, 23, 42, 0.72);
@@ -284,14 +293,6 @@ main {
   font-weight: 700;
   color: var(--color-text);
   margin: 0;
-}
-
-.hero-name-ja {
-  font-size: 1.25rem;
-  color: var(--color-text-muted);
-  margin: 0.3rem 0 0;
-  font-weight: 500;
-  letter-spacing: 0.05em;
 }
 
 .hero-subtitle {
