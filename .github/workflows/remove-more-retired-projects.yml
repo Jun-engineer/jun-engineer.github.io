@@ -1,0 +1,101 @@
+name: Remove additional retired projects from portfolio
+
+on:
+  push:
+    paths:
+      - ".github/workflows/remove-more-retired-projects.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Remove retired project cards and images
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = (
+              'github.com/Jun-engineer/knowledge-tracker',
+              'github.com/Jun-engineer/sports-rules-companion',
+              'github.com/Jun-engineer/subscription-expenses-manager',
+              'github.com/Jun-engineer/inventory-management',
+              '>Knowledge Tracker<',
+              '>Sports Rules Companion<',
+              '>Subscription Expenses Manager<',
+              '>Inventory / Order / Cost Management<',
+              '>ナレッジ',
+              '>スポーツ',
+              '>サブスクリプション支出管理<',
+              '>在庫',
+          )
+
+          article = re.compile(
+              r'\n\s*<article class="card project-card">.*?</article>',
+              re.DOTALL,
+          )
+
+          changed = []
+          removed = []
+
+          for path in Path('src').rglob('*.njk'):
+              text = path.read_text(encoding='utf-8')
+
+              def repl(match):
+                  block = match.group(0)
+                  if any(target in block for target in targets):
+                      title = re.search(r'<h3>(.*?)</h3>', block, re.DOTALL)
+                      removed.append(f'{path}: {title.group(1).strip() if title else "project card"}')
+                      return ''
+                  return block
+
+              updated = article.sub(repl, text)
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+
+          for image in [
+              Path('src/photo/knowledge_tracker.jpg'),
+              Path('src/photo/sports-rules-companion.jpg'),
+              Path('src/photo/subscription_expenses_manager.jpg'),
+              Path('src/photo/inventory_management_system.jpg'),
+          ]:
+              if image.exists():
+                  image.unlink()
+                  changed.append(str(image))
+
+          print('Changed files:')
+          for p in changed:
+              print(f'- {p}')
+          print('Removed cards:')
+          for item in removed:
+              print(f'- {item}')
+
+          if len(removed) < 8:
+              raise SystemExit(f'Expected at least 8 project cards across EN/JA, removed only {len(removed)}. Refusing partial cleanup.')
+          PY
+
+      - name: Verify retired projects are gone
+        shell: bash
+        run: |
+          if grep -RniE 'Jun-engineer/(knowledge-tracker|sports-rules-companion|subscription-expenses-manager|inventory-management)' src --include='*.njk'; then
+            echo "Retired project reference still exists in portfolio templates."
+            exit 1
+          fi
+          echo "Retired project references removed from portfolio templates."
+
+      - name: Commit portfolio cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src
+          git commit -m "chore: remove additional retired projects from portfolio"
+          git push
