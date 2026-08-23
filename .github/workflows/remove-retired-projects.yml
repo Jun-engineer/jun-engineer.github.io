@@ -1,0 +1,86 @@
+name: Remove retired projects from portfolio
+
+on:
+  push:
+    paths:
+      - ".github/workflows/remove-retired-projects.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Remove retired project cards
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = (
+              'github.com/Jun-engineer/idea-bridge',
+              'github.com/Jun-engineer/heros-bar',
+              '>Idea Bridge<',
+              '>Japanese Bar Homepage<',
+              '>日本のバー ホームページ<',
+              '>Mentra<',
+              'github.com/Jun-engineer/mentra',
+          )
+
+          article = re.compile(
+              r'\n\s*<article class="card project-card">.*?</article>',
+              re.DOTALL,
+          )
+
+          changed = []
+          removed = []
+
+          for path in Path('src').rglob('*.njk'):
+              text = path.read_text(encoding='utf-8')
+
+              def repl(match):
+                  block = match.group(0)
+                  if any(target in block for target in targets):
+                      title = re.search(r'<h3>(.*?)</h3>', block, re.DOTALL)
+                      removed.append(f'{path}: {title.group(1).strip() if title else "project card"}')
+                      return ''
+                  return block
+
+              updated = article.sub(repl, text)
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+
+          print('Changed files:')
+          for p in changed:
+              print(f'- {p}')
+          print('Removed cards:')
+          for item in removed:
+              print(f'- {item}')
+
+          if not removed:
+              raise SystemExit('No matching project cards found; refusing to make an empty cleanup commit.')
+          PY
+
+      - name: Verify retired projects are gone
+        shell: bash
+        run: |
+          if grep -RniE 'Jun-engineer/(idea-bridge|heros-bar|mentra)|>Idea Bridge<|>Japanese Bar Homepage<|>日本のバー ホームページ<|>Mentra<' src --include='*.njk'; then
+            echo "Retired project reference still exists in portfolio templates."
+            exit 1
+          fi
+          echo "Retired project references removed from portfolio templates."
+
+      - name: Commit portfolio cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src
+          git commit -m "chore: remove retired projects from portfolio"
+          git push
