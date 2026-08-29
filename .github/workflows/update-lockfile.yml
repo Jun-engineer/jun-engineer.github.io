@@ -26,8 +26,10 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Refresh lockfile
-        run: npm install --package-lock-only --ignore-scripts
+      - name: Refresh lockfile and apply non-breaking audit fixes
+        run: |
+          npm install --package-lock-only --ignore-scripts
+          npm audit fix --package-lock-only --ignore-scripts
 
       - name: Validate install, audit, and build
         run: |
