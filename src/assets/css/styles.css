@@ -607,6 +607,24 @@ main {
   display: block;
 }
 
+.project-image img.project-image-contain {
+  object-fit: contain;
+  background: #07547f;
+}
+
+.project-card .project-context {
+  margin: 0.45rem 0 0.8rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.project-context a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .project-card p {
   margin: 0;
   color: var(--color-text-muted);
