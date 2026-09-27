@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Jun Nammoku | Portfolio
-description: Cloud engineering portfolio of Jun Nammoku (南木 潤) — 5+ years of AWS and Azure experience, government cloud migration, multi-client operations, and open-source projects.
+description: Engineering portfolio of Jun Nammoku (南木 潤) — cloud migration, multi-client operations, web products, and selected project work.
 lang: en
 extraScripts:
   - src: "//cdn.credly.com/assets/utilities/embed.js"
@@ -344,25 +344,6 @@ extraScripts:
       <div class="card-grid projects-grid">
         <article class="card project-card">
           <div class="project-image">
-            <img loading="lazy" src="/photo/portfolio.jpg" alt="Screenshot of portfolio site">
-          </div>
-          <div>
-            <h3>Portfolio Platform</h3>
-            <p>
-              Responsive bilingual site deployed to GitHub Pages showcasing professional history, certifications, and projects. Focused on accessibility, performance, and maintainable content architecture.
-            </p>
-            <p class="tagline-list">
-              <span>Stack: HTML, TypeScript, custom design system</span>
-              <span>Hosting: GitHub Pages</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">View repository</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
             <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress band website">
           </div>
           <div>
@@ -373,12 +354,11 @@ extraScripts:
             </p>
             <p class="tagline-list">
               <span>My role: Architecture, frontend development, infrastructure, and CI/CD</span>
-              <span>Stack: HTML, CSS, Vanilla JavaScript, Bicep</span>
+              <span>Stack: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
               <span>Hosting: Azure Static Web Apps, GitHub Actions CI/CD</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/never-egress" target="_blank" rel="noopener noreferrer">GitHub repo</a>
             </div>
           </div>
         </article>
@@ -409,17 +389,18 @@ extraScripts:
           </div>
           <div>
             <h3>SpeedSpeak</h3>
+            <p class="project-context">Own product · <a href="https://nammoku-solutions.com/apps/speed-speak/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
             <p>
-              Bilingual training app for rapid English composition. Offers CEFR-aligned decks, swipe-friendly flashcards, and review logging powered by Azure Functions so learners can practice anywhere without manual tracking.
+              English composition trainer for web and iOS with 2,000+ CEFR-aligned cards, swipe-based practice, and AI vocabulary help. Practice history and favourites are saved on the device.
             </p>
             <p class="tagline-list">
-              <span>Stack: Next.js 14 (TypeScript), Zustand, Azure Functions</span>
+              <span>My role: Product design, frontend and API development, cloud deployment</span>
+              <span>Stack: Next.js, React, TypeScript, Zustand, Capacitor, Azure Functions</span>
               <span>Hosting: Azure Static Web Apps, Cosmos DB, GitHub Actions</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Visit app</a>
               <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/instant-english-composition" target="_blank" rel="noopener noreferrer">GitHub repo</a>
             </div>
           </div>
         </article>
@@ -430,16 +411,17 @@ extraScripts:
           </div>
           <div>
             <h3>WriteDiary AI</h3>
+            <p class="project-context">Own product · <a href="https://nammoku-solutions.com/apps/write-diary-ai/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
             <p>
-              Cross-platform mobile app for language learners. Users write diary entries in their target language and receive instant AI-powered corrections via Amazon Bedrock. Mistakes become flashcards for spaced repetition review, with handwriting OCR via Google ML Kit.
+              iOS English diary app with AI writing corrections, handwriting scan, and review flashcards based on past mistakes. Built with a Flutter client and an AWS serverless backend.
             </p>
             <p class="tagline-list">
+              <span>My role: Mobile app development and AWS backend architecture</span>
               <span>Stack: Flutter, AWS CDK (TypeScript), Lambda, DynamoDB, Cognito, Bedrock</span>
               <span>Hosting: AWS Serverless (API Gateway, S3, Cognito)</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/write-diary-ai" target="_blank" rel="noopener noreferrer">GitHub repo</a>
             </div>
           </div>
         </article>
@@ -450,15 +432,36 @@ extraScripts:
           </div>
           <div>
             <h3>Serverless VPN Control</h3>
+            <p class="project-context">Personal engineering project</p>
             <p>
-              Full-stack control plane for WireGuard VPN lifecycle management. Implements maintenance windows, SNS notifications, and SSM automation for self-service peer onboarding.
+              AWS control plane for a WireGuard VPN on EC2. Automates start and stop windows, traffic monitoring, SNS notifications, and peer registration through Systems Manager.
             </p>
             <p class="tagline-list">
-              <span>Stack: TypeScript UI, AWS Lambda, EventBridge, SSM</span>
-              <span>Hosting: CloudFront, API Gateway, Lambda</span>
+              <span>Stack: Terraform, Python Lambda, EventBridge Scheduler, SSM</span>
+              <span>Hosting: EC2, CloudFront, API Gateway, S3</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/portfolio.jpg" alt="Screenshot of portfolio site">
+          </div>
+          <div>
+            <h3>Portfolio Platform</h3>
+            <p class="project-context">Personal project</p>
+            <p>
+              Responsive bilingual site deployed to GitHub Pages showcasing professional history, certifications, and projects. Focused on accessibility, performance, and maintainable content architecture.
+            </p>
+            <p class="tagline-list">
+              <span>Stack: Eleventy, Nunjucks, CSS, JavaScript</span>
+              <span>Hosting: GitHub Pages</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">View repository</a>
             </div>
           </div>
         </article>
@@ -470,8 +473,8 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Contact</span>
-        <h2>Continue the conversation</h2>
-        <p>Let me know how I can help—cloud architecture, platform enablement, or technical leadership.</p>
+        <h2>Let's connect</h2>
+        <p>Get in touch about cloud or platform engineering roles, or a project where my engineering experience could help.</p>
       </div>
       <div class="contact-panel">
         <div class="contact-links">
@@ -493,7 +496,7 @@ extraScripts:
           </a>
         </div>
         <p>
-          Bilingual communication (EN / JA) welcomed. Share context and goals—I'll respond with next steps and availability.
+          I can communicate in English and Japanese. Share a little about the role or project when you reach out.
         </p>
       </div>
     </div>
@@ -506,6 +509,6 @@ extraScripts:
 
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; 2025 Jun Nammoku. Built with curiosity and automation.</p>
+    <p>&copy; 2026 Jun Nammoku. Built with curiosity and automation.</p>
   </div>
 </footer>

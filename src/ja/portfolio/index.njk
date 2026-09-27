@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: 南木 潤 | ポートフォリオ
-description: 南木 潤（Jun Nammoku）のクラウドエンジニアリングポートフォリオ。AWS・Azure での 5 年以上の実務経験、官公庁クラウド移行、マルチクライアント運用、個人開発プロジェクトを紹介します。
+description: 南木 潤（Jun Nammoku）のエンジニアリングポートフォリオ。クラウド移行、マルチクライアント運用、Webプロダクト、開発プロジェクトを紹介します。
 lang: ja
 extraScripts:
   - src: "//cdn.credly.com/assets/utilities/embed.js"
@@ -63,7 +63,7 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">職務経歴</span>
-        <h2>Work History</h2>
+        <h2>職務経歴</h2>
         <p>日系 IT 企業で4年間、政府系クラウド移行を一貫して担当した後、オーストラリアに拠点を移し、オーストラリアの MSP にてマルチクライアントのクラウド運用と IT サポートを担当してきました。</p>
       </div>
       <div class="card-grid experience-highlights">
@@ -343,25 +343,6 @@ extraScripts:
       <div class="card-grid projects-grid">
         <article class="card project-card">
           <div class="project-image">
-            <img loading="lazy" src="/photo/portfolio.jpg" alt="ポートフォリオサイトのスクリーンショット">
-          </div>
-          <div>
-            <h3>ポートフォリオサイト</h3>
-            <p>
-              日英バイリンガル対応の静的サイト。職務経歴・資格・プロジェクトを分かりやすく整理し、パフォーマンスとアクセシビリティを重視したデザインに刷新しました。
-            </p>
-            <p class="tagline-list">
-              <span>技術: HTML, TypeScript, カスタムデザイン</span>
-              <span>ホスティング: GitHub Pages</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">リポジトリを見る</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
             <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress バンドサイト">
           </div>
           <div>
@@ -372,12 +353,11 @@ extraScripts:
             </p>
             <p class="tagline-list">
               <span>担当: 設計、フロントエンド開発、インフラ、CI/CD</span>
-              <span>技術: HTML, CSS, Vanilla JavaScript, Bicep</span>
+              <span>技術: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
               <span>ホスティング: Azure Static Web Apps, GitHub Actions CI/CD</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/never-egress" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
             </div>
           </div>
         </article>
@@ -408,17 +388,18 @@ extraScripts:
           </div>
           <div>
             <h3>SpeedSpeak</h3>
+            <p class="project-context">自社プロダクト · <a href="https://nammoku-solutions.com/apps/speed-speak/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
             <p>
-              日英バイリンガルで瞬間英作文を鍛える学習アプリ。CEFR レベル別デッキ、スワイプ操作のフラッシュカード、Azure Functions による学習履歴記録で、どこでも効率的にトレーニングできます。
+              Web と iOS に対応した瞬間英作文アプリ。CEFR A1〜C2 の2,000問以上、スワイプ操作のカード学習、AIによる単語解説を提供。学習履歴とお気に入りは端末内に保存します。
             </p>
             <p class="tagline-list">
-              <span>技術: Next.js 14 (TypeScript), Zustand, Azure Functions</span>
+              <span>担当: プロダクト設計、フロントエンド・API開発、クラウドへのデプロイ</span>
+              <span>技術: Next.js, React, TypeScript, Zustand, Capacitor, Azure Functions</span>
               <span>ホスティング: Azure Static Web Apps, Cosmos DB, GitHub Actions</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Web アプリを見る</a>
               <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/instant-english-composition" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
             </div>
           </div>
         </article>
@@ -429,16 +410,17 @@ extraScripts:
           </div>
           <div>
             <h3>WriteDiary AI</h3>
+            <p class="project-context">自社プロダクト · <a href="https://nammoku-solutions.com/apps/write-diary-ai/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
             <p>
-              語学学習者向けのクロスプラットフォームモバイルアプリ。学習中の言語で日記を書くと、Amazon Bedrock による AI 添削を即座に受けられます。間違いは自動でフラッシュカード化され、間隔反復学習が可能。Google ML Kit による手書き OCR にも対応しています。
+              英語日記をAIが添削するiOSアプリ。手書き日記のスキャン取り込みと、間違いをもとにした復習フラッシュカードを備えています。FlutterのアプリとAWSのサーバーレス構成で開発しました。
             </p>
             <p class="tagline-list">
+              <span>担当: モバイルアプリ開発、AWSバックエンド設計</span>
               <span>技術: Flutter, AWS CDK (TypeScript), Lambda, DynamoDB, Cognito, Bedrock</span>
               <span>ホスティング: AWS サーバーレス (API Gateway, S3, Cognito)</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/write-diary-ai" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
             </div>
           </div>
         </article>
@@ -449,15 +431,36 @@ extraScripts:
           </div>
           <div>
             <h3>サーバーレス VPN コントロール</h3>
+            <p class="project-context">個人の技術プロジェクト</p>
             <p>
-              WireGuard VPN の起動・停止・ステータス監視を行うフルマネージドな管理ツール。メンテナンスウィンドウ制御、SNS 通知、SSM を使ったピア登録自動化を実装しました。
+              EC2上のWireGuard VPNを管理するAWSのコントロールプレーン。起動・停止時間、通信量の監視、SNS通知、Systems Manager経由のピア登録を自動化しました。
             </p>
             <p class="tagline-list">
-              <span>技術: TypeScript UI, AWS Lambda, EventBridge, SSM</span>
-              <span>ホスティング: CloudFront, API Gateway, Lambda</span>
+              <span>技術: Terraform, Python Lambda, EventBridge Scheduler, SSM</span>
+              <span>ホスティング: EC2, CloudFront, API Gateway, S3</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/portfolio.jpg" alt="ポートフォリオサイトのスクリーンショット">
+          </div>
+          <div>
+            <h3>ポートフォリオサイト</h3>
+            <p class="project-context">個人プロジェクト</p>
+            <p>
+              日英バイリンガル対応の静的サイト。職務経歴・資格・プロジェクトを分かりやすく整理し、パフォーマンスとアクセシビリティを重視したデザインに刷新しました。
+            </p>
+            <p class="tagline-list">
+              <span>技術: Eleventy, Nunjucks, CSS, JavaScript</span>
+              <span>ホスティング: GitHub Pages</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">リポジトリを見る</a>
             </div>
           </div>
         </article>
@@ -469,8 +472,8 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">お問い合わせ</span>
-        <h2>お気軽にご相談ください</h2>
-        <p>クラウドアーキテクチャの設計・ガバナンス整備・自動化など、お手伝いできることがあればご連絡ください。</p>
+        <h2>ご連絡ください</h2>
+        <p>クラウド・プラットフォーム領域の採用や、開発プロジェクトについてお話しできれば幸いです。</p>
       </div>
       <div class="contact-panel">
         <div class="contact-links">
@@ -492,7 +495,7 @@ extraScripts:
           </a>
         </div>
         <p>
-          日英バイリンガルで対応可能です。案件の背景やゴールを教えていただければ、スケジュールと進め方をご提案します。
+          日本語・英語で対応できます。募集ポジションやプロジェクトの概要を添えてご連絡ください。
         </p>
       </div>
     </div>
@@ -505,6 +508,6 @@ extraScripts:
 
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; 2025 南木 潤. 新しい価値をクラウドから。</p>
+    <p>&copy; 2026 南木 潤. 新しい価値をクラウドから。</p>
   </div>
 </footer>
