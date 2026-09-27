@@ -19,10 +19,10 @@ extraScripts:
       <div class="nav-links" id="portfolio-navigation" data-nav-menu>
         <div class="nav-links-group" aria-label="セクション">
           <span class="nav-group-label">セクション</span>
+          <a href="#projects">プロジェクト</a>
           <a href="#experience">職務経歴</a>
           <a href="#skills">スキル</a>
           <a href="#certifications">資格</a>
-          <a href="#projects">プロジェクト</a>
           <a href="#contact">お問い合わせ</a>
         </div>
         <span class="nav-divider" aria-hidden="true"></span>
@@ -47,9 +47,9 @@ extraScripts:
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">ポートフォリオ</p>
-        <h1>クラウドエンジニアとしての実績と専門性</h1>
+        <h1>クラウド移行からプロダクト公開まで</h1>
         <p class="hero-subtitle">
-          自己紹介は<a href="/index.html">トップページ</a> にまとめました。本ページではスキル、資格、プロジェクトといった実務面にフォーカスしてご紹介します。
+          日本ではAWSへの移行と運用、オーストラリアでは10以上の顧客案件に関わるクラウド運用を担当。Nammoku SolutionsではWebサイトとアプリを設計・公開しています。担当範囲と実現したことをご紹介します。
         </p>
         <div class="hero-actions">
           <a class="cta-button primary" href="#projects">プロジェクト一覧へ</a>
@@ -59,40 +59,182 @@ extraScripts:
     </div>
   </section>
 
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">プロジェクト</span>
+        <h2>主な開発プロジェクト</h2>
+        <p>案件ごとの課題、設計判断、公開した成果を紹介します。本人所有のAWS構成も下に掲載しています。</p>
+      </div>
+      <div class="card-grid projects-grid">
+        <article class="card project-card project-featured" id="never-egress">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress バンドサイト">
+          </div>
+          <div>
+            <h3>Never Egress バンドサイト</h3>
+            <p class="project-context">クライアント案件 · <a href="https://nammoku-solutions.com/works/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              バンドの世界観に合わせて制作した日英対応の公式サイト。ニュース、ライブ情報、メディア、グッズを集約し、メンバー自身が更新できる管理画面を実装。お問い合わせフォームには Azure Communication Services を利用しています。
+            </p>
+            <dl class="project-proof">
+              <div><dt>課題</dt><dd>ファン向け情報を一か所に集め、バンド自身が最新情報を更新できるようにする。</dd></div>
+              <div><dt>設計判断</dt><dd>日英対応のNext.jsサイトとSanity CMSを組み合わせ、問い合わせはAzureで処理。</dd></div>
+              <div><dt>公開した成果</dt><dd>ニュース、ライブ、メディア、グッズ導線を備え、依頼主が更新できる公式サイト。</dd></div>
+            </dl>
+            <p class="tagline-list">
+              <span>担当: 設計、フロントエンド開発、インフラ、CI/CD</span>
+              <span>技術: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
+              <span>ホスティング: Azure Static Web Apps, GitHub Actions CI/CD</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card project-featured" id="whv-compass">
+          <div class="project-image">
+            <img class="project-image-contain" loading="lazy" src="/photo/whv-compass.png" alt="オーストラリアワーホリコンパスのサイト画像">
+          </div>
+          <div>
+            <h3>オーストラリアワーホリコンパス</h3>
+            <p class="project-context">自社プロジェクト · <a href="https://nammoku-solutions.com/works/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              渡航準備から現地生活・仕事・ビザ・帰国まで、オーストラリアのワーキングホリデー情報を整理した日本語プラットフォーム。記事検索、ニュース、掲示板、会員機能を備えています。
+            </p>
+            <dl class="project-proof">
+              <div><dt>課題</dt><dd>渡航の各段階で必要な情報を探しやすくし、後から見返せるようにする。</dd></div>
+              <div><dt>設計判断</dt><dd>情報を段階別に整理し、Next.jsとSupabaseで検索・掲示板・会員機能を構築。</dd></div>
+              <div><dt>公開した成果</dt><dd>記事検索、ニュース、掲示板、会員機能を備えた日本語ガイド。</dd></div>
+            </dl>
+            <p class="tagline-list">
+              <span>担当: プロダクト設計、フルスタック開発、クラウド構成</span>
+              <span>技術: Next.js, React, TypeScript, Supabase</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://whv-guide-australia.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="speed-speak">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/speed-speak.jpg" alt="瞬間英作文トレーニングアプリの画面">
+          </div>
+          <div>
+            <h3>SpeedSpeak</h3>
+            <p class="project-context">自社プロダクト · <a href="https://nammoku-solutions.com/apps/speed-speak/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              Web と iOS に対応した瞬間英作文アプリ。CEFR A1〜C2 の2,000問以上、スワイプ操作のカード学習、AIによる単語解説を提供。学習履歴とお気に入りは端末内に保存します。
+            </p>
+            <p class="project-result"><strong>公開した成果:</strong> 2,000問以上の学習カードと端末内の学習履歴を備えたWeb・iOS版。</p>
+            <p class="tagline-list">
+              <span>担当: プロダクト設計、フロントエンド・API開発、クラウドへのデプロイ</span>
+              <span>技術: Next.js, React, TypeScript, Zustand, Capacitor, Azure Functions</span>
+              <span>ホスティング: Azure Static Web Apps, Cosmos DB, GitHub Actions</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Web アプリを見る</a>
+              <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="write-diary">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/write-diary-ai.jpg" alt="WriteDiary AI モバイルアプリの画面">
+          </div>
+          <div>
+            <h3>WriteDiary AI</h3>
+            <p class="project-context">自社プロダクト · <a href="https://nammoku-solutions.com/apps/write-diary-ai/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              英語日記をAIが添削するiOSアプリ。手書き日記のスキャン取り込みと、間違いをもとにした復習フラッシュカードを備えています。FlutterのアプリとAWSのサーバーレス構成で開発しました。
+            </p>
+            <p class="project-result"><strong>公開した成果:</strong> 手書き取り込み、AI添削、間違いの復習をつなぐApp Store公開アプリ。</p>
+            <p class="tagline-list">
+              <span>担当: モバイルアプリ開発、AWSバックエンド設計</span>
+              <span>技術: Flutter, AWS CDK (TypeScript), Lambda, DynamoDB, Cognito, Bedrock</span>
+              <span>ホスティング: AWS サーバーレス (API Gateway, S3, Cognito)</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="vpn-control">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/serverless-vpn-control.jpg" alt="Serverless VPN Control の画面">
+          </div>
+          <div>
+            <h3>サーバーレス VPN コントロール</h3>
+            <p class="project-context">個人の技術プロジェクト</p>
+            <p>
+              EC2上のWireGuard VPNを管理するAWSのコントロールプレーン。起動・停止時間、通信量の監視、SNS通知、Systems Manager経由のピア登録を自動化しました。
+            </p>
+            <p class="project-result"><strong>技術的な成果:</strong> VPNの起動・停止とピア管理を、管理画面とスケジュール処理から扱える構成。</p>
+            <p class="tagline-list">
+              <span>技術: Terraform, Python Lambda, EventBridge Scheduler, SSM</span>
+              <span>ホスティング: EC2, CloudFront, API Gateway, S3</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="portfolio-site">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/portfolio.jpg" alt="ポートフォリオサイトのスクリーンショット">
+          </div>
+          <div>
+            <h3>ポートフォリオサイト</h3>
+            <p class="project-context">個人プロジェクト</p>
+            <p>
+              日英バイリンガル対応の静的サイト。職務経歴・資格・プロジェクトを分かりやすく整理し、パフォーマンスとアクセシビリティを重視したデザインに刷新しました。
+            </p>
+            <p class="project-result"><strong>公開した成果:</strong> Eleventyの共通ビルドで生成する日英サイトと公開ソースコード。</p>
+            <p class="tagline-list">
+              <span>技術: Eleventy, Nunjucks, CSS, JavaScript</span>
+              <span>ホスティング: GitHub Pages</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">リポジトリを見る</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="section-header architecture-heading" id="aws-architecture">
+        <span class="eyebrow">AWSアーキテクチャ</span>
+        <h3>自分のプロジェクトの高レベル構成</h3>
+        <p>サービスの役割と処理の流れだけを示しています。アカウント・ネットワークの詳細、認証情報、顧客環境は含めていません。</p>
+      </div>
+      <div class="card-grid architecture-grid">
+        <figure class="card architecture-card">
+          <figcaption><strong>WriteDiary AI</strong><span>認証付きのAI添削</span></figcaption>
+          <ol class="architecture-flow">
+            <li>Flutter iOSアプリ</li><li>Amazon Cognito</li><li>API Gateway + Lambda</li><li>Amazon Bedrock + DynamoDB</li>
+          </ol>
+          <p>CDKでサーバーレスのバックエンドを定義し、認証されたリクエストで添削・復習データを扱います。</p>
+        </figure>
+        <figure class="card architecture-card">
+          <figcaption><strong>サーバーレス VPN コントロール</strong><span>管理操作とスケジュール実行</span></figcaption>
+          <ol class="architecture-flow">
+            <li>CloudFront + S3の画面</li><li>API Gateway + Lambda</li><li>Systems Manager</li><li>EC2 + WireGuard</li>
+          </ol>
+          <p>EventBridge Schedulerで停止処理と通信量チェックを実行し、起動時はSNSで通知します。<a href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">公開リポジトリ</a>も参照できます。</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="experience">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">職務経歴</span>
         <h2>職務経歴</h2>
-        <p>日系 IT 企業で4年間、政府系クラウド移行を一貫して担当した後、オーストラリアに拠点を移し、オーストラリアの MSP にてマルチクライアントのクラウド運用と IT サポートを担当してきました。</p>
-      </div>
-      <div class="card-grid experience-highlights">
-        <article class="card">
-          <h3>概要</h3>
-          <p>
-            オーストラリアにて10以上のクライアントプロジェクトのクラウド運用の管理経験、Tier 1 IT サポート経験があります。以前は大規模な政府向けオンプレミス環境を AWS へ移行し、設計・構築・試験・移行・運用を一貫して担当してきました。
-          </p>
-        </article>
-        <article class="card">
-          <h3>強み</h3>
-          <ul>
-            <li>マルチクライアントのクラウド運用・監視・障害対応</li>
-            <li>AWS 上での設計・実装・運用</li>
-            <li>オンプレミスから AWS への移行経験</li>
-            <li>AWS CDK / CloudFormation / Terraform による IaC 推進</li>
-            <li>クライアント対応、技術プレゼン、月次レビュー会議のリード</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>主な担当領域</h3>
-          <ul>
-            <li>クラウド運用・監視・パッチ管理・障害対応</li>
-            <li>Tier 1 IT サポート（リモート＋オンサイト対応）</li>
-            <li>クライアントとの保守調整・技術報告・月次レビュー</li>
-            <li>クラウドアーキテクチャの設計・開発・運用改善</li>
-            <li>主要技術: AWS, Azure, Linux, Git, Docker, PostgreSQL, TypeScript</li>
-          </ul>
-        </article>
+        <p>KSKに2022年8月〜2025年9月、Sazae Pty Ltdに2026年2月〜5月在籍。クラウド移行・運用と顧客対応での担当範囲をまとめました。</p>
       </div>
       <div class="timeline" aria-label="職務年表">
         <article class="card timeline-card">
@@ -100,12 +242,11 @@ extraScripts:
             <span class="timeline-period">2026年2月〜2026年5月</span>
             <span class="timeline-role">クラウドエンジニア / Tier 1 IT サポート</span>
           </div>
-          <p class="timeline-company">オーストラリア MSP | シドニー</p>
+          <p class="timeline-company">Sazae Pty Ltd | シドニー</p>
           <ul>
-            <li>10以上のクライアントプロジェクトのクラウド運用・保守を管理。監視、障害対応、月次パッチ管理を担当。</li>
-            <li>2つのクライアント環境に対し、リモートを中心にオンサイトも含む Tier 1 IT サポートを提供。</li>
-            <li>クライアントと直接連携し、保守スケジュール調整、技術レポート共有、月次レビュー会議でのプレゼンをリード。</li>
-            <li>クラウドアーキテクチャの設計・開発に参画し、インフラ改善と運用効率化に貢献。</li>
+            <li>10以上の顧客案件でクラウド運用を支援し、監視・障害対応・定期パッチ作業を担当。</li>
+            <li>2つの顧客環境でリモート・オンサイトのTier 1サポートを担当し、問い合わせを解決。</li>
+            <li>保守日程の調整、技術報告、月次レビューでの説明を通じて顧客との連携を担った。</li>
           </ul>
           <div class="timeline-tools" aria-label="注力分野">
             <span class="tag-pill">クラウド運用</span>
@@ -118,11 +259,11 @@ extraScripts:
             <span class="timeline-period">2025年1月〜2025年9月</span>
             <span class="timeline-role">チームリーダー｜運用・保守</span>
           </div>
-          <p class="timeline-company">日系 IT 企業 | ネットワーク・セキュリティ・データベース領域</p>
+          <p class="timeline-company">株式会社KSK | ネットワーク・セキュリティ・データベース領域</p>
           <ul>
-            <li>ネットワーク/セキュリティ/DB の5名チームを統括し、移行後のAWS運用を安定化。</li>
-            <li>WBS管理やレビューを通じてタスクと稼働を最適化し、SLA内での障害対応を達成。</li>
-            <li>原因分析と再発防止策の議論をリードし、勉強会を実施してスキルを底上げ。</li>
+            <li>5名チームを率い、移行後のAWS環境でネットワーク・セキュリティ・DBの運用を担当。</li>
+            <li>WBSとタスクレビューを運用し、合意したサービス水準に沿った障害対応を支援。</li>
+            <li>原因分析とナレッジ共有を主導し、運用上の課題をチームで検討した。</li>
           </ul>
           <div class="timeline-tools" aria-label="注力分野">
             <span class="tag-pill">AWS</span>
@@ -135,11 +276,11 @@ extraScripts:
             <span class="timeline-period">2023年4月〜2024年12月</span>
             <span class="timeline-role">メンバー｜政府クラウド移行プロジェクト</span>
           </div>
-          <p class="timeline-company">日系 IT 企業 | 公共クラウド移行プログラム</p>
+          <p class="timeline-company">株式会社KSK | 公共クラウド移行プログラム</p>
           <ul>
-            <li>要件定義資料の更新と顧客への説明を担当し、合意形成を推進。</li>
-            <li>詳細設計書・手順書・CDK 実装ガイドを作成し、レビューをリード。</li>
-            <li>セキュリティ/ネットワーク/Lambda を CDK とシェルで構築し、各種試験と移行を実施。</li>
+            <li>変更された要件を設計書と実装ガイドに反映し、レビューを通じて関係者との認識を揃えた。</li>
+            <li>CDKとLinuxスクリプトでAWSのセキュリティ・ネットワーク・Lambda構成を実装。</li>
+            <li>性能試験、災害復旧訓練、本番移行の切り替えを支援した。</li>
           </ul>
           <div class="timeline-tools" aria-label="注力分野">
             <span class="tag-pill">AWS CDK</span>
@@ -149,10 +290,10 @@ extraScripts:
         </article>
         <article class="card timeline-card">
           <div class="timeline-meta">
-            <span class="timeline-period">2021年4月〜2023年3月</span>
+            <span class="timeline-period">2022年8月〜2023年3月</span>
             <span class="timeline-role">メンバー｜公共サービスメッシュ PoC</span>
           </div>
-          <p class="timeline-company">日系 IT 企業 | ハイブリッドインフラ検証</p>
+          <p class="timeline-company">株式会社KSK | ハイブリッドインフラ検証</p>
           <ul>
             <li>オンプレミスとAWSを接続するハイブリッドネットワーク構成を調査・検証。</li>
             <li>データ移行方式やログ収集手法を評価し、性能試験の結果を分析。</li>
@@ -172,59 +313,40 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">スキル</span>
-        <h2>クラウド基盤を支える技術スタック</h2>
-        <p>インフラ設計からアプリケーション開発まで、クラウド環境を運用するためのバランス良いスキルセットです。</p>
+        <h2>実務と公開プロジェクトで使った技術</h2>
+        <p>掲載した職歴・制作物に結びつく技術を中心にまとめています。</p>
       </div>
       <div class="card-grid">
         <article class="card skill-card">
-          <h3>クラウド &amp; プラットフォーム</h3>
+          <h3>AWS設計・運用</h3>
           <ul>
-            <li>AWS（マルチアカウント設計、ネットワーク、セキュリティ基盤）</li>
-            <li>Azure（Static Web Apps、Communication Services、Bicep）</li>
-            <li>GCP を活用したサーバーレスワークロード構築</li>
-            <li>マルチクライアントのクラウド運用・監視・パッチ管理</li>
-            <li>ランディングゾーン自動化とガバナンス整備</li>
+            <li>クラウド移行、ネットワーク、セキュリティ、Linux、移行後の運用</li>
+            <li>自社・個人開発でのLambda、API Gateway、DynamoDB、Cognito、Bedrock、EC2</li>
+            <li>監視、障害対応、パッチ管理、顧客サポート</li>
           </ul>
         </article>
         <article class="card skill-card">
-          <h3>Infrastructure as Code</h3>
+          <h3>インフラ構築・デリバリー</h3>
           <ul>
-            <li>AWS CDK（TypeScript / Python）、CloudFormation、Terraform</li>
-            <li>GitHub Actions / GitLab CI / AWS CodeBuild によるデプロイ自動化</li>
-            <li>設定管理、シークレット運用、ポリシー自動化</li>
+            <li>AWS CDK、CloudFormation、Terraform</li>
+            <li>GitHub Actions、GitLab CI、BashとPythonによる自動化</li>
+            <li>Azure Static Web Apps、Azure Functions、Bicepを使った公開・運用</li>
           </ul>
         </article>
         <article class="card skill-card">
-          <h3>バックエンド開発</h3>
+          <h3>Web・モバイル開発</h3>
           <ul>
-            <li>Next.js / Node.js / Express.js による API・SSR 実装</li>
-            <li>Golang（Gin）での高速 API サービス</li>
-            <li>Python（FastAPI）を使ったデータ連携・自動化</li>
-            <li>Java / Spring Boot によるエンタープライズ統合</li>
+            <li>TypeScript、React、Next.js、Node.js</li>
+            <li>Flutter、CapacitorによるiOSアプリ開発</li>
+            <li>Sanity CMS、Supabaseを使ったコンテンツ・会員機能</li>
           </ul>
         </article>
         <article class="card skill-card">
-          <h3>フロントエンド &amp; UX</h3>
+          <h3>データ・チーム連携</h3>
           <ul>
-            <li>TypeScript、React、TailwindCSS を活用した UI 設計</li>
-            <li>日英バイリンガル対応コンポーネントの設計と翻訳管理</li>
-            <li>静的サイト生成および SSR/ISR アーキテクチャ</li>
-          </ul>
-        </article>
-        <article class="card skill-card">
-          <h3>データ &amp; ストレージ</h3>
-          <ul>
-            <li>PostgreSQL（スキーマ設計、パフォーマンスチューニング、全文検索）</li>
-            <li>OracleDB、DynamoDB、マネージド時系列ストアの活用</li>
-            <li>イベント駆動によるデータ収集と分析基盤整備</li>
-          </ul>
-        </article>
-        <article class="card skill-card">
-          <h3>ツール &amp; 自動化</h3>
-          <ul>
-            <li>Docker、Kubernetes 基礎、Cloud Run 運用</li>
-            <li>PowerShell / Bash / Python によるスクリプト開発</li>
-            <li>開発者向けドキュメント整備とナレッジ共有</li>
+            <li>アプリ開発でのPostgreSQL、DynamoDB、Cosmos DB</li>
+            <li>日英対応のUIと技術ドキュメント</li>
+            <li>顧客向け説明、保守計画、チームレビュー</li>
           </ul>
         </article>
       </div>
@@ -235,8 +357,8 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">資格</span>
-        <h2>専門知識を裏付ける認定</h2>
-        <p>AWS を中心に、ネットワーク・データベースまで幅広く保有しています。</p>
+        <h2>主な認定資格</h2>
+        <p>クラウド関連の資格を3件抜粋しました。日付は取得日です。現在の状態はバッジからご確認ください。</p>
       </div>
       <div class="card-grid certificate-grid">
         <article class="card certification-card">
@@ -250,24 +372,6 @@ extraScripts:
         </article>
         <article class="card certification-card">
           <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="f1da416a-11ee-4c5d-958e-c165892aa82d" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Data Analytics – Specialty</h3>
-            <p>2024年3月24日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="9a77e83e-1429-47c3-a580-9250c0b525e2" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Database – Specialty</h3>
-            <p>2024年4月29日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
             <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="ddfb8674-38d3-47f4-9dd3-4c4de899ce74" data-share-badge-host="https://www.credly.com"></div>
           </div>
           <div>
@@ -277,194 +381,26 @@ extraScripts:
         </article>
         <article class="card certification-card">
           <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="262d6a2a-8164-4559-b703-ca4609a476db" data-share-badge-host="https://www.credly.com"></div>
+            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="f1da416a-11ee-4c5d-958e-c165892aa82d" data-share-badge-host="https://www.credly.com"></div>
           </div>
           <div>
-            <h3>AWS Certified Solutions Architect – Associate</h3>
-            <p>2023年2月11日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="f021d5d6-32a9-4c6d-a241-be6c0a3f9653" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Developer – Associate</h3>
-            <p>2023年11月19日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="ef86f46e-4484-4ed5-94fb-7b8cf15a21d7" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Cloud Practitioner</h3>
-            <p>2022年10月29日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="30dd2ee3-26a5-45a4-8921-c9b06210a563" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>LPIC-1</h3>
-            <p>2022年12月17日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="a7324cfa-36cb-47c1-b54b-fdadde4fba54" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>Cisco Certified Network Associate</h3>
-            <p>2022年7月29日 取得</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div class="no-badge">No badge available</div>
-          </div>
-          <div>
-            <h3>ORACLE MASTER Bronze DBA 2019</h3>
-            <p>2023年1月14日 取得</p>
+            <h3>AWS Certified Data Analytics – Specialty</h3>
+            <p>2024年3月24日 取得</p>
           </div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">プロジェクト</span>
-        <h2>主な開発プロジェクト</h2>
-        <p>自社プロダクト、クライアントワーク、個人開発から、設計・開発を担当したプロジェクトを抜粋しています。</p>
-      </div>
-      <div class="card-grid projects-grid">
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress バンドサイト">
-          </div>
-          <div>
-            <h3>Never Egress バンドサイト</h3>
-            <p class="project-context">クライアント案件 · <a href="https://nammoku-solutions.com/works/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              バンドの世界観に合わせて制作した日英対応の公式サイト。ニュース、ライブ情報、メディア、グッズを集約し、メンバー自身が更新できる管理画面を実装。お問い合わせフォームには Azure Communication Services を利用しています。
-            </p>
-            <p class="tagline-list">
-              <span>担当: 設計、フロントエンド開発、インフラ、CI/CD</span>
-              <span>技術: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
-              <span>ホスティング: Azure Static Web Apps, GitHub Actions CI/CD</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img class="project-image-contain" loading="lazy" src="/photo/whv-compass.png" alt="オーストラリアワーホリコンパスのサイト画像">
-          </div>
-          <div>
-            <h3>オーストラリアワーホリコンパス</h3>
-            <p class="project-context">自社プロジェクト · <a href="https://nammoku-solutions.com/works/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              渡航準備から現地生活・仕事・ビザ・帰国まで、オーストラリアのワーキングホリデー情報を整理した日本語プラットフォーム。記事検索、ニュース、掲示板、会員機能を備えています。
-            </p>
-            <p class="tagline-list">
-              <span>担当: プロダクト設計、フルスタック開発、クラウド構成</span>
-              <span>技術: Next.js, React, TypeScript, Supabase</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://whv-guide-australia.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/speed-speak.jpg" alt="瞬間英作文トレーニングアプリの画面">
-          </div>
-          <div>
-            <h3>SpeedSpeak</h3>
-            <p class="project-context">自社プロダクト · <a href="https://nammoku-solutions.com/apps/speed-speak/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              Web と iOS に対応した瞬間英作文アプリ。CEFR A1〜C2 の2,000問以上、スワイプ操作のカード学習、AIによる単語解説を提供。学習履歴とお気に入りは端末内に保存します。
-            </p>
-            <p class="tagline-list">
-              <span>担当: プロダクト設計、フロントエンド・API開発、クラウドへのデプロイ</span>
-              <span>技術: Next.js, React, TypeScript, Zustand, Capacitor, Azure Functions</span>
-              <span>ホスティング: Azure Static Web Apps, Cosmos DB, GitHub Actions</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Web アプリを見る</a>
-              <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/write-diary-ai.jpg" alt="WriteDiary AI モバイルアプリの画面">
-          </div>
-          <div>
-            <h3>WriteDiary AI</h3>
-            <p class="project-context">自社プロダクト · <a href="https://nammoku-solutions.com/apps/write-diary-ai/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              英語日記をAIが添削するiOSアプリ。手書き日記のスキャン取り込みと、間違いをもとにした復習フラッシュカードを備えています。FlutterのアプリとAWSのサーバーレス構成で開発しました。
-            </p>
-            <p class="tagline-list">
-              <span>担当: モバイルアプリ開発、AWSバックエンド設計</span>
-              <span>技術: Flutter, AWS CDK (TypeScript), Lambda, DynamoDB, Cognito, Bedrock</span>
-              <span>ホスティング: AWS サーバーレス (API Gateway, S3, Cognito)</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/serverless-vpn-control.jpg" alt="Serverless VPN Control の画面">
-          </div>
-          <div>
-            <h3>サーバーレス VPN コントロール</h3>
-            <p class="project-context">個人の技術プロジェクト</p>
-            <p>
-              EC2上のWireGuard VPNを管理するAWSのコントロールプレーン。起動・停止時間、通信量の監視、SNS通知、Systems Manager経由のピア登録を自動化しました。
-            </p>
-            <p class="tagline-list">
-              <span>技術: Terraform, Python Lambda, EventBridge Scheduler, SSM</span>
-              <span>ホスティング: EC2, CloudFront, API Gateway, S3</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/portfolio.jpg" alt="ポートフォリオサイトのスクリーンショット">
-          </div>
-          <div>
-            <h3>ポートフォリオサイト</h3>
-            <p class="project-context">個人プロジェクト</p>
-            <p>
-              日英バイリンガル対応の静的サイト。職務経歴・資格・プロジェクトを分かりやすく整理し、パフォーマンスとアクセシビリティを重視したデザインに刷新しました。
-            </p>
-            <p class="tagline-list">
-              <span>技術: Eleventy, Nunjucks, CSS, JavaScript</span>
-              <span>ホスティング: GitHub Pages</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">リポジトリを見る</a>
-            </div>
-          </div>
-        </article>
-      </div>
+      <details class="cert-details">
+        <summary>その他の取得資格（7件）</summary>
+        <ul>
+          <li><span>AWS Certified Database – Specialty</span><small>2024年4月29日 取得</small></li>
+          <li><span>AWS Certified Solutions Architect – Associate</span><small>2023年2月11日 取得</small></li>
+          <li><span>AWS Certified Developer – Associate</span><small>2023年11月19日 取得</small></li>
+          <li><span>AWS Certified Cloud Practitioner</span><small>2022年10月29日 取得</small></li>
+          <li><span>LPIC-1</span><small>2022年12月17日 取得</small></li>
+          <li><span>Cisco Certified Network Associate</span><small>2022年7月29日 取得</small></li>
+          <li><span>ORACLE MASTER Bronze DBA 2019</span><small>2023年1月14日 取得</small></li>
+        </ul>
+      </details>
     </div>
   </section>
 

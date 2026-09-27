@@ -19,10 +19,10 @@ extraScripts:
       <div class="nav-links" id="portfolio-navigation" data-nav-menu>
         <div class="nav-links-group" aria-label="Sections">
           <span class="nav-group-label">Sections</span>
+          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#certifications">Certifications</a>
-          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
         <span class="nav-divider" aria-hidden="true"></span>
@@ -47,9 +47,9 @@ extraScripts:
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Portfolio</p>
-        <h1>Technical depth &amp; delivery track record</h1>
+        <h1>Cloud engineering, from migration to shipped products</h1>
         <p class="hero-subtitle">
-          Explore detailed skills, certifications, and projects. My full introduction now lives on the <a href="/index.html">homepage</a>, while this space focuses on engineering execution.
+          I delivered AWS migration and operations work in Japan, supported more than 10 client projects in Australia, and now build web and mobile products through Nammoku Solutions. Explore what I built and the decisions behind it.
         </p>
         <div class="hero-actions">
           <a class="cta-button primary" href="#projects">Skip to Projects</a>
@@ -59,40 +59,182 @@ extraScripts:
     </div>
   </section>
 
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Projects</span>
+        <h2>Selected engineering projects</h2>
+        <p>What each project needed, what I built, and what is available to explore. Public architecture examples follow the projects.</p>
+      </div>
+      <div class="card-grid projects-grid">
+        <article class="card project-card project-featured" id="never-egress">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress band website">
+          </div>
+          <div>
+            <h3>Never Egress Band Website</h3>
+            <p class="project-context">Client project · <a href="https://nammoku-solutions.com/works/en.html" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              Commissioned bilingual website for a music band, bringing news, live dates, media, and merchandise together. A self-service admin panel lets the band update content; the contact form uses Azure Communication Services.
+            </p>
+            <dl class="project-proof">
+              <div><dt>Challenge</dt><dd>Give fans one place for current information while letting the band maintain it themselves.</dd></div>
+              <div><dt>Decision</dt><dd>Pair a bilingual Next.js site with Sanity CMS and an Azure-hosted contact flow.</dd></div>
+              <div><dt>Delivered</dt><dd>A live website with news, shows, media, merchandise links, and client-managed updates.</dd></div>
+            </dl>
+            <p class="tagline-list">
+              <span>My role: Architecture, frontend development, infrastructure, and CI/CD</span>
+              <span>Stack: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
+              <span>Hosting: Azure Static Web Apps, GitHub Actions CI/CD</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card project-featured" id="whv-compass">
+          <div class="project-image">
+            <img class="project-image-contain" loading="lazy" src="/photo/whv-compass.png" alt="Australia Working Holiday Compass site graphic">
+          </div>
+          <div>
+            <h3>Australia Working Holiday Compass</h3>
+            <p class="project-context">Own project · <a href="https://nammoku-solutions.com/works/en.html" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              Japanese-language platform guiding people through an Australian working holiday, from preparation to local life, work, visas, and returning home. Includes article search, news, a community board, and member accounts.
+            </p>
+            <dl class="project-proof">
+              <div><dt>Challenge</dt><dd>Make information across the working holiday journey easier to find and revisit.</dd></div>
+              <div><dt>Decision</dt><dd>Organise guidance by stage and add search, community discussion, and member features with Next.js and Supabase.</dd></div>
+              <div><dt>Delivered</dt><dd>A published Japanese-language guide with searchable articles, news, a board, and accounts.</dd></div>
+            </dl>
+            <p class="tagline-list">
+              <span>My role: Product design, full-stack development, and cloud architecture</span>
+              <span>Stack: Next.js, React, TypeScript, Supabase</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://whv-guide-australia.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="speed-speak">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/speed-speak.jpg" alt="SpeedSpeak study interface">
+          </div>
+          <div>
+            <h3>SpeedSpeak</h3>
+            <p class="project-context">Own product · <a href="https://nammoku-solutions.com/apps/speed-speak/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              English composition trainer for web and iOS with 2,000+ CEFR-aligned cards, swipe-based practice, and AI vocabulary help. Practice history and favourites are saved on the device.
+            </p>
+            <p class="project-result"><strong>Delivered:</strong> Web and iOS releases with 2,000+ practice cards and on-device learning history.</p>
+            <p class="tagline-list">
+              <span>My role: Product design, frontend and API development, cloud deployment</span>
+              <span>Stack: Next.js, React, TypeScript, Zustand, Capacitor, Azure Functions</span>
+              <span>Hosting: Azure Static Web Apps, Cosmos DB, GitHub Actions</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Visit app</a>
+              <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="write-diary">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/write-diary-ai.jpg" alt="WriteDiary AI mobile app interface">
+          </div>
+          <div>
+            <h3>WriteDiary AI</h3>
+            <p class="project-context">Own product · <a href="https://nammoku-solutions.com/apps/write-diary-ai/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
+            <p>
+              iOS English diary app with AI writing corrections, handwriting scan, and review flashcards based on past mistakes. Built with a Flutter client and an AWS serverless backend.
+            </p>
+            <p class="project-result"><strong>Delivered:</strong> An App Store release connecting handwritten entry, AI feedback, and mistake-based review.</p>
+            <p class="tagline-list">
+              <span>My role: Mobile app development and AWS backend architecture</span>
+              <span>Stack: Flutter, AWS CDK (TypeScript), Lambda, DynamoDB, Cognito, Bedrock</span>
+              <span>Hosting: AWS Serverless (API Gateway, S3, Cognito)</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="vpn-control">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/serverless-vpn-control.jpg" alt="Serverless VPN control interface">
+          </div>
+          <div>
+            <h3>Serverless VPN Control</h3>
+            <p class="project-context">Personal engineering project</p>
+            <p>
+              AWS control plane for a WireGuard VPN on EC2. Automates start and stop windows, traffic monitoring, SNS notifications, and peer registration through Systems Manager.
+            </p>
+            <p class="project-result"><strong>Engineering outcome:</strong> Routine VPN lifecycle and peer-management actions can be handled through the control plane and scheduled automation.</p>
+            <p class="tagline-list">
+              <span>Stack: Terraform, Python Lambda, EventBridge Scheduler, SSM</span>
+              <span>Hosting: EC2, CloudFront, API Gateway, S3</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" id="portfolio-site">
+          <div class="project-image">
+            <img loading="lazy" src="/photo/portfolio.jpg" alt="Screenshot of portfolio site">
+          </div>
+          <div>
+            <h3>Portfolio Platform</h3>
+            <p class="project-context">Personal project</p>
+            <p>
+              Responsive bilingual site deployed to GitHub Pages showcasing professional history, certifications, and projects. Focused on accessibility, performance, and maintainable content architecture.
+            </p>
+            <p class="project-result"><strong>Delivered:</strong> A published English/Japanese site with a shared Eleventy build and public source code.</p>
+            <p class="tagline-list">
+              <span>Stack: Eleventy, Nunjucks, CSS, JavaScript</span>
+              <span>Hosting: GitHub Pages</span>
+            </p>
+            <div class="project-links">
+              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">View repository</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="section-header architecture-heading" id="aws-architecture">
+        <span class="eyebrow">AWS architecture</span>
+        <h3>High-level views of my own projects</h3>
+        <p>These diagrams show service roles and data flow only. They exclude accounts, network details, credentials, and client environments.</p>
+      </div>
+      <div class="card-grid architecture-grid">
+        <figure class="card architecture-card">
+          <figcaption><strong>WriteDiary AI</strong><span>Authenticated writing feedback</span></figcaption>
+          <ol class="architecture-flow">
+            <li>Flutter iOS app</li><li>Amazon Cognito</li><li>API Gateway + Lambda</li><li>Amazon Bedrock + DynamoDB</li>
+          </ol>
+          <p>CDK defines the serverless backend; the app sends authenticated requests for correction and review data.</p>
+        </figure>
+        <figure class="card architecture-card">
+          <figcaption><strong>Serverless VPN Control</strong><span>Control path and scheduled actions</span></figcaption>
+          <ol class="architecture-flow">
+            <li>CloudFront + S3 UI</li><li>API Gateway + Lambda</li><li>Systems Manager</li><li>EC2 + WireGuard</li>
+          </ol>
+          <p>EventBridge Scheduler triggers shutdown and traffic checks; SNS sends start notifications. See the <a href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">public repository</a>.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="experience">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Experience</span>
         <h2>Work history</h2>
-        <p>After four years at a Japanese IT company delivering a government cloud migration end-to-end, I relocated to Australia and managed multi-client cloud operations and IT support at an Australian MSP.</p>
-      </div>
-      <div class="card-grid experience-highlights">
-        <article class="card">
-          <h3>Summary</h3>
-          <p>
-            Managed cloud operations across 10+ client projects in Australia while providing Tier 1 IT support. Previously migrated a large on-premises government system to AWS and led post-migration operations in Japan. Comfortable navigating regulated environments, multi-client coordination, and cross-functional stakeholders.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Strengths</h3>
-          <ul>
-            <li>Multi-client cloud operations, monitoring, and incident response</li>
-            <li>Design, implementation, and operation of AWS platforms</li>
-            <li>Hands-on migration experience from on-premises to cloud</li>
-            <li>Infrastructure as Code with AWS CDK, CloudFormation, and Terraform</li>
-            <li>Client-facing communication, technical presentations, and review meetings</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Core responsibilities</h3>
-          <ul>
-            <li>Cloud operations, monitoring, patch management, and incident response</li>
-            <li>Tier 1 IT support with remote and onsite troubleshooting</li>
-            <li>Client coordination, maintenance scheduling, and monthly reviews</li>
-            <li>Cloud architecture design, development, and operational improvements</li>
-            <li>Key stack: AWS, Azure, Linux, Git, Docker, PostgreSQL, TypeScript</li>
-          </ul>
-        </article>
+        <p>KSK, August 2022–September 2025; Sazae Pty Ltd, February–May 2026. Selected responsibilities and outcomes from cloud migration, operations, and client support.</p>
       </div>
       <div class="timeline" aria-label="Professional timeline">
         <article class="card timeline-card">
@@ -100,12 +242,11 @@ extraScripts:
             <span class="timeline-period">Feb 2026 – May 2026</span>
             <span class="timeline-role">Cloud Engineer / Tier 1 IT Support</span>
           </div>
-          <p class="timeline-company">Australian MSP — Sydney, Australia</p>
+          <p class="timeline-company">Sazae Pty Ltd — Sydney, Australia</p>
           <ul>
-            <li>Manage cloud operations and maintenance across 10+ client projects, including monitoring, incident response, and monthly patch management.</li>
-            <li>Provide Tier 1 IT support for 2 client environments through remote support with occasional onsite troubleshooting.</li>
-            <li>Coordinate directly with clients to schedule maintenance, communicate technical updates, and lead monthly review meetings with presentations.</li>
-            <li>Participate in cloud architecture design and development, contributing to infrastructure improvements and operational efficiency.</li>
+            <li>Supported cloud operations for 10+ client projects, covering monitoring, incident response, and scheduled patching.</li>
+            <li>Resolved Tier 1 requests across two client environments through remote support and onsite troubleshooting.</li>
+            <li>Kept clients informed through maintenance coordination, technical updates, and monthly review presentations.</li>
           </ul>
           <div class="timeline-tools" aria-label="Focus areas">
             <span class="tag-pill">Cloud Operations</span>
@@ -118,11 +259,11 @@ extraScripts:
             <span class="timeline-period">Jan 2025 – Sep 2025</span>
             <span class="timeline-role">Team Leader · Operations &amp; Maintenance</span>
           </div>
-          <p class="timeline-company">Japanese IT Company — Network, Security, and Database Unit</p>
+          <p class="timeline-company">KSK — Network, Security, and Database Unit</p>
           <ul>
             <li>Led a five-person operations pod supporting the post-migration AWS environment for a government platform.</li>
-            <li>Owned WBS planning, task reviews, and workload balancing to keep incident response within service levels.</li>
-            <li>Guided RCA discussions and mentoring sessions to strengthen network, security, and database capabilities.</li>
+            <li>Planned and reviewed work across the team to support incident response within agreed service levels.</li>
+            <li>Led root-cause discussions and knowledge-sharing sessions across network, security, and database work.</li>
           </ul>
           <div class="timeline-tools" aria-label="Focus areas">
             <span class="tag-pill">AWS</span>
@@ -135,12 +276,11 @@ extraScripts:
             <span class="timeline-period">Apr 2023 – Dec 2024</span>
             <span class="timeline-role">Engineer · Government Cloud Migration</span>
           </div>
-          <p class="timeline-company">Japanese IT Company — Public Sector Cloud Program</p>
+          <p class="timeline-company">KSK — Public Sector Cloud Program</p>
           <ul>
-            <li>Maintained requirements documentation and steered stakeholder approvals for scope changes.</li>
-            <li>Authored detailed design packages, operational procedures, and CDK implementation standards.</li>
-            <li>Built AWS security services, networking, and Lambda stacks using CDK and Linux automation scripts.</li>
-            <li>Coordinated performance testing, DR rehearsals, and the production migration cutover.</li>
+            <li>Translated changing requirements into reviewed design documents and implementation guidance.</li>
+            <li>Built AWS security, networking, and Lambda components using CDK and Linux scripts.</li>
+            <li>Supported performance testing, disaster recovery rehearsals, and the production migration cutover.</li>
           </ul>
           <div class="timeline-tools" aria-label="Focus areas">
             <span class="tag-pill">AWS CDK</span>
@@ -150,10 +290,10 @@ extraScripts:
         </article>
         <article class="card timeline-card">
           <div class="timeline-meta">
-            <span class="timeline-period">Apr 2021 – Mar 2023</span>
+            <span class="timeline-period">Aug 2022 – Mar 2023</span>
             <span class="timeline-role">Engineer · Public Service Mesh PoC</span>
           </div>
-          <p class="timeline-company">Japanese IT Company — Hybrid Infrastructure Initiative</p>
+          <p class="timeline-company">KSK — Hybrid Infrastructure Initiative</p>
           <ul>
             <li>Validated hybrid network designs spanning on-premises data centers and AWS for a multi-agency service mesh.</li>
             <li>Evaluated secure data migration patterns and logging approaches during performance testing.</li>
@@ -173,59 +313,40 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Skills</span>
-        <h2>Technical toolkit</h2>
-        <p>A balanced stack across infrastructure, backend services, and modern frontend experiences.</p>
+        <h2>Technologies used in delivered work</h2>
+        <p>Focused on the tools evidenced by the work history and projects on this page.</p>
       </div>
       <div class="card-grid">
         <article class="card skill-card">
-          <h3>Cloud &amp; Platform Engineering</h3>
+          <h3>AWS architecture &amp; operations</h3>
           <ul>
-            <li>AWS (multi-account design, networking, security baselines)</li>
-            <li>Azure (Static Web Apps, Communication Services, Bicep)</li>
-            <li>GCP fundamentals for serverless workloads</li>
-            <li>Multi-client cloud operations, monitoring, and patch management</li>
-            <li>Landing zone automation and governance guardrails</li>
+            <li>Cloud migration, networking, security, Linux, and post-migration operations</li>
+            <li>Lambda, API Gateway, DynamoDB, Cognito, Bedrock, and EC2 in own projects</li>
+            <li>Monitoring, incident response, patching, and client support</li>
           </ul>
         </article>
         <article class="card skill-card">
-          <h3>Infrastructure as Code</h3>
+          <h3>Infrastructure &amp; delivery</h3>
           <ul>
-            <li>AWS CDK (TypeScript/Python), CloudFormation, Terraform</li>
-            <li>GitHub Actions, GitLab CI, and AWS CodeBuild pipelines</li>
-            <li>Configuration management, secret rotation, policy automation</li>
+            <li>AWS CDK, CloudFormation, and Terraform</li>
+            <li>GitHub Actions and GitLab CI; Bash and Python automation</li>
+            <li>Azure Static Web Apps, Azure Functions, and Bicep for product delivery</li>
           </ul>
         </article>
         <article class="card skill-card">
-          <h3>Backend Engineering</h3>
+          <h3>Web &amp; mobile products</h3>
           <ul>
-            <li>Next.js / Node.js / Express.js microservices</li>
-            <li>Golang with Gin for high-throughput APIs</li>
-            <li>Python (FastAPI) for data services and automation</li>
-            <li>Java / Spring Boot for enterprise-grade integrations</li>
+            <li>TypeScript, React, Next.js, and Node.js</li>
+            <li>Flutter and Capacitor for iOS delivery</li>
+            <li>Sanity CMS and Supabase for content and community features</li>
           </ul>
         </article>
         <article class="card skill-card">
-          <h3>Frontend &amp; Product</h3>
+          <h3>Data &amp; collaboration</h3>
           <ul>
-            <li>TypeScript, React, TailwindCSS, and component systems</li>
-            <li>Designing bilingual user interfaces and documentation</li>
-            <li>Static site generation and hybrid SSR/ISR architectures</li>
-          </ul>
-        </article>
-        <article class="card skill-card">
-          <h3>Data &amp; Storage</h3>
-          <ul>
-            <li>PostgreSQL (schema design, performance tuning, FTS)</li>
-            <li>OracleDB, DynamoDB, and managed time-series storage</li>
-            <li>Event-driven ingestion pipelines and analytics enablement</li>
-          </ul>
-        </article>
-        <article class="card skill-card">
-          <h3>Tooling &amp; Enablement</h3>
-          <ul>
-            <li>Docker, Kubernetes fundamentals, and Cloud Run</li>
-            <li>PowerShell, Bash, Python scripting for automation</li>
-            <li>Developer experience, documentation, and knowledge bases</li>
+            <li>PostgreSQL, DynamoDB, and Cosmos DB in application work</li>
+            <li>Bilingual UI and technical documentation</li>
+            <li>Client presentations, maintenance planning, and team reviews</li>
           </ul>
         </article>
       </div>
@@ -236,8 +357,8 @@ extraScripts:
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Certifications</span>
-        <h2>Validated expertise</h2>
-        <p>Professional certifications that reinforce hands-on experience across cloud, security, and infrastructure.</p>
+        <h2>Selected certifications</h2>
+        <p>Three cloud credentials in focus. Dates below are issue dates; use the linked badges to check current status.</p>
       </div>
       <div class="card-grid certificate-grid">
         <article class="card certification-card">
@@ -251,24 +372,6 @@ extraScripts:
         </article>
         <article class="card certification-card">
           <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="f1da416a-11ee-4c5d-958e-c165892aa82d" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Data Analytics – Specialty</h3>
-            <p>Issued March 24, 2024</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="9a77e83e-1429-47c3-a580-9250c0b525e2" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Database – Specialty</h3>
-            <p>Issued April 29, 2024</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
             <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="ddfb8674-38d3-47f4-9dd3-4c4de899ce74" data-share-badge-host="https://www.credly.com"></div>
           </div>
           <div>
@@ -278,194 +381,26 @@ extraScripts:
         </article>
         <article class="card certification-card">
           <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="262d6a2a-8164-4559-b703-ca4609a476db" data-share-badge-host="https://www.credly.com"></div>
+            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="f1da416a-11ee-4c5d-958e-c165892aa82d" data-share-badge-host="https://www.credly.com"></div>
           </div>
           <div>
-            <h3>AWS Certified Solutions Architect – Associate</h3>
-            <p>Issued February 11, 2023</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="f021d5d6-32a9-4c6d-a241-be6c0a3f9653" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Developer – Associate</h3>
-            <p>Issued November 19, 2023</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="ef86f46e-4484-4ed5-94fb-7b8cf15a21d7" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>AWS Certified Cloud Practitioner</h3>
-            <p>Issued October 29, 2022</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="30dd2ee3-26a5-45a4-8921-c9b06210a563" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>LPIC-1</h3>
-            <p>Issued December 17, 2022</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div data-iframe-width="120" data-iframe-height="240" data-share-badge-id="a7324cfa-36cb-47c1-b54b-fdadde4fba54" data-share-badge-host="https://www.credly.com"></div>
-          </div>
-          <div>
-            <h3>Cisco Certified Network Associate</h3>
-            <p>Issued July 29, 2022</p>
-          </div>
-        </article>
-        <article class="card certification-card">
-          <div class="cert-badge">
-            <div class="no-badge">No badge available</div>
-          </div>
-          <div>
-            <h3>ORACLE MASTER Bronze DBA 2019</h3>
-            <p>Issued January 14, 2023</p>
+            <h3>AWS Certified Data Analytics – Specialty</h3>
+            <p>Issued March 24, 2024</p>
           </div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Projects</span>
-        <h2>Selected engineering projects</h2>
-        <p>Products, client work, and engineering projects I've designed and built.</p>
-      </div>
-      <div class="card-grid projects-grid">
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress band website">
-          </div>
-          <div>
-            <h3>Never Egress Band Website</h3>
-            <p class="project-context">Client project · <a href="https://nammoku-solutions.com/works/en.html" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              Commissioned bilingual website for a music band, bringing news, live dates, media, and merchandise together. A self-service admin panel lets the band update content; the contact form uses Azure Communication Services.
-            </p>
-            <p class="tagline-list">
-              <span>My role: Architecture, frontend development, infrastructure, and CI/CD</span>
-              <span>Stack: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
-              <span>Hosting: Azure Static Web Apps, GitHub Actions CI/CD</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img class="project-image-contain" loading="lazy" src="/photo/whv-compass.png" alt="Australia Working Holiday Compass site graphic">
-          </div>
-          <div>
-            <h3>Australia Working Holiday Compass</h3>
-            <p class="project-context">Own project · <a href="https://nammoku-solutions.com/works/en.html" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              Japanese-language platform guiding people through an Australian working holiday, from preparation to local life, work, visas, and returning home. Includes article search, news, a community board, and member accounts.
-            </p>
-            <p class="tagline-list">
-              <span>My role: Product design, full-stack development, and cloud architecture</span>
-              <span>Stack: Next.js, React, TypeScript, Supabase</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://whv-guide-australia.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/speed-speak.jpg" alt="SpeedSpeak study interface">
-          </div>
-          <div>
-            <h3>SpeedSpeak</h3>
-            <p class="project-context">Own product · <a href="https://nammoku-solutions.com/apps/speed-speak/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              English composition trainer for web and iOS with 2,000+ CEFR-aligned cards, swipe-based practice, and AI vocabulary help. Practice history and favourites are saved on the device.
-            </p>
-            <p class="tagline-list">
-              <span>My role: Product design, frontend and API development, cloud deployment</span>
-              <span>Stack: Next.js, React, TypeScript, Zustand, Capacitor, Azure Functions</span>
-              <span>Hosting: Azure Static Web Apps, Cosmos DB, GitHub Actions</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Visit app</a>
-              <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/write-diary-ai.jpg" alt="WriteDiary AI mobile app interface">
-          </div>
-          <div>
-            <h3>WriteDiary AI</h3>
-            <p class="project-context">Own product · <a href="https://nammoku-solutions.com/apps/write-diary-ai/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
-            <p>
-              iOS English diary app with AI writing corrections, handwriting scan, and review flashcards based on past mistakes. Built with a Flutter client and an AWS serverless backend.
-            </p>
-            <p class="tagline-list">
-              <span>My role: Mobile app development and AWS backend architecture</span>
-              <span>Stack: Flutter, AWS CDK (TypeScript), Lambda, DynamoDB, Cognito, Bedrock</span>
-              <span>Hosting: AWS Serverless (API Gateway, S3, Cognito)</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/serverless-vpn-control.jpg" alt="Serverless VPN control interface">
-          </div>
-          <div>
-            <h3>Serverless VPN Control</h3>
-            <p class="project-context">Personal engineering project</p>
-            <p>
-              AWS control plane for a WireGuard VPN on EC2. Automates start and stop windows, traffic monitoring, SNS notifications, and peer registration through Systems Manager.
-            </p>
-            <p class="tagline-list">
-              <span>Stack: Terraform, Python Lambda, EventBridge Scheduler, SSM</span>
-              <span>Hosting: EC2, CloudFront, API Gateway, S3</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub repo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-image">
-            <img loading="lazy" src="/photo/portfolio.jpg" alt="Screenshot of portfolio site">
-          </div>
-          <div>
-            <h3>Portfolio Platform</h3>
-            <p class="project-context">Personal project</p>
-            <p>
-              Responsive bilingual site deployed to GitHub Pages showcasing professional history, certifications, and projects. Focused on accessibility, performance, and maintainable content architecture.
-            </p>
-            <p class="tagline-list">
-              <span>Stack: Eleventy, Nunjucks, CSS, JavaScript</span>
-              <span>Hosting: GitHub Pages</span>
-            </p>
-            <div class="project-links">
-              <a class="cta-button ghost" href="https://github.com/Jun-engineer/jun-engineer.github.io" target="_blank" rel="noopener noreferrer">View repository</a>
-            </div>
-          </div>
-        </article>
-      </div>
+      <details class="cert-details">
+        <summary>Other certifications earned (7)</summary>
+        <ul>
+          <li><span>AWS Certified Database – Specialty</span><small>Issued April 29, 2024</small></li>
+          <li><span>AWS Certified Solutions Architect – Associate</span><small>Issued February 11, 2023</small></li>
+          <li><span>AWS Certified Developer – Associate</span><small>Issued November 19, 2023</small></li>
+          <li><span>AWS Certified Cloud Practitioner</span><small>Issued October 29, 2022</small></li>
+          <li><span>LPIC-1</span><small>Issued December 17, 2022</small></li>
+          <li><span>Cisco Certified Network Associate</span><small>Issued July 29, 2022</small></li>
+          <li><span>ORACLE MASTER Bronze DBA 2019</span><small>Issued January 14, 2023</small></li>
+        </ul>
+      </details>
     </div>
   </section>
 

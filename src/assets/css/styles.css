@@ -584,13 +584,25 @@ main {
 }
 
 .projects-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.project-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+}
+
+.project-featured .project-image {
+  position: sticky;
+  top: 1.5rem;
 }
 
 .project-image {
@@ -635,6 +647,148 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.project-proof {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.2rem 0;
+}
+
+.project-proof div,
+.project-result {
+  padding: 0.75rem 0.9rem;
+  border-left: 2px solid var(--color-accent);
+  background: rgba(56, 189, 248, 0.06);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.project-proof dt,
+.project-result strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.project-proof dd {
+  margin: 0.15rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.93rem;
+}
+
+.project-card p.project-result {
+  margin: 1rem 0;
+}
+
+.featured-work-grid .project-context {
+  color: var(--color-accent);
+  font-size: 0.88rem;
+  margin: 0 0 0.45rem;
+}
+
+.featured-work-grid p:not(.project-context) {
+  color: var(--color-text-muted);
+}
+
+.featured-work-grid .cta-inline {
+  display: inline-flex;
+  margin-top: 0.5rem;
+}
+
+.cert-details {
+  margin-top: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+}
+
+.cert-details summary {
+  cursor: pointer;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cert-details ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.cert-details li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.cert-details small {
+  color: var(--color-text-muted);
+}
+
+.architecture-heading {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.architecture-grid {
+  grid-template-columns: 1fr;
+}
+
+.architecture-card {
+  margin: 0;
+}
+
+.architecture-card figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.architecture-card figcaption strong {
+  font-size: 1.15rem;
+}
+
+.architecture-card figcaption span,
+.architecture-card p {
+  color: var(--color-text-muted);
+}
+
+.architecture-card p {
+  margin: 1.1rem 0 0;
+}
+
+.architecture-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.architecture-flow li {
+  position: relative;
+  min-width: 0;
+  padding: 0.8rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: rgba(56, 189, 248, 0.08);
+  text-align: center;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.architecture-flow li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -0.82rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent);
+  z-index: 2;
 }
 
 .tagline-list {
@@ -1454,6 +1608,26 @@ main {
 }
 
 @media (max-width: 768px) {
+  .project-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .project-featured .project-image {
+    position: static;
+  }
+
+  .architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-flow li:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    bottom: -0.85rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
   .nav-links {
     position: absolute;
     top: calc(100% + 12px);
