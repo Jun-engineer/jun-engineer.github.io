@@ -760,6 +760,64 @@ main {
   margin: 1.1rem 0 0;
 }
 
+.architecture-card--visual {
+  scroll-margin-top: 2rem;
+}
+
+.diagram-frame {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: #0b1425;
+}
+
+.diagram-frame a {
+  display: block;
+}
+
+.diagram-frame img {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+  border-radius: 0;
+}
+
+.architecture-card .diagram-open {
+  margin: 0.6rem 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.architecture-card h4 {
+  margin: 0 0 0.7rem;
+  font-size: 1.05rem;
+}
+
+.architecture-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.25rem;
+  padding-left: 1.4rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.94rem;
+}
+
+.architecture-steps li {
+  padding-left: 0.25rem;
+}
+
+.architecture-steps strong {
+  color: var(--color-text);
+}
+
+.architecture-card p.architecture-note {
+  margin-top: 1.35rem;
+  font-size: 0.88rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.9rem;
+}
+
 .architecture-flow {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1608,6 +1666,10 @@ main {
 }
 
 @media (max-width: 768px) {
+  .architecture-steps {
+    grid-template-columns: 1fr;
+  }
+
   .project-featured {
     grid-template-columns: 1fr;
   }

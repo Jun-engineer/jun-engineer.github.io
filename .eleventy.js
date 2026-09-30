@@ -70,6 +70,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/photo": "photo" });
+  eleventyConfig.addPassthroughCopy({ "src/diagrams": "diagrams" });
 
   eleventyConfig.addWatchTarget("src/assets/css/styles.css");
   eleventyConfig.addWatchTarget("src/assets/js/main.js");

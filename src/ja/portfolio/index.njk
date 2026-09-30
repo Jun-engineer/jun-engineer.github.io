@@ -20,6 +20,7 @@ extraScripts:
         <div class="nav-links-group" aria-label="セクション">
           <span class="nav-group-label">セクション</span>
           <a href="#projects">プロジェクト</a>
+          <a href="#project-architecture">構成図</a>
           <a href="#experience">職務経歴</a>
           <a href="#skills">スキル</a>
           <a href="#certifications">資格</a>
@@ -89,6 +90,7 @@ extraScripts:
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+              <a class="cta-button ghost" href="#never-egress-architecture">インフラ構成図を見る</a>
             </div>
           </div>
         </article>
@@ -137,6 +139,7 @@ extraScripts:
             <div class="project-links">
               <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Web アプリを見る</a>
               <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
+              <a class="cta-button ghost" href="#speedspeak-architecture">インフラ構成図を見る</a>
             </div>
           </div>
         </article>
@@ -159,6 +162,7 @@ extraScripts:
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
+              <a class="cta-button ghost" href="#write-diary-architecture">インフラ構成図を見る</a>
             </div>
           </div>
         </article>
@@ -180,6 +184,7 @@ extraScripts:
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>
+              <a class="cta-button ghost" href="#vpn-architecture">インフラ構成図を見る</a>
             </div>
           </div>
         </article>
@@ -205,20 +210,53 @@ extraScripts:
           </div>
         </article>
       </div>
-      <div class="section-header architecture-heading" id="aws-architecture">
-        <span class="eyebrow">AWSアーキテクチャ</span>
-        <h3>自分のプロジェクトの高レベル構成</h3>
-        <p>サービスの役割と処理の流れだけを示しています。アカウント・ネットワークの詳細、認証情報、顧客環境は含めていません。</p>
+      <div class="section-header architecture-heading" id="project-architecture">
+        <span class="eyebrow">プロジェクト構成図</span>
+        <h3>インフラと処理の流れ</h3>
+        <p>Never EgressとSpeedSpeakはAzure、WriteDiary AIとVPN管理はAWSの構成です。アカウント・ネットワーク・認証情報の詳細を除き、アプリの処理経路を示します。</p>
       </div>
       <div class="card-grid architecture-grid">
-        <figure class="card architecture-card">
+        <figure class="card architecture-card architecture-card--visual" id="never-egress-architecture">
+          <figcaption><strong>Never Egress</strong><span>Azure Static Web Apps · Sanity · Azure Communication Services</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/never-egress-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Never Egressの構成図を原寸で開く">
+              <img src="/diagrams/never-egress-architecture.svg" width="1200" height="535" loading="lazy" alt="閲覧者がAzure Static Web Apps上のNext.jsサイトにアクセスし、サイトがSanityからコンテンツを取得。問い合わせはAzure Communication Services Emailを経由して届く。GitHub Actionsからサイトへデプロイ。">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/never-egress-architecture.svg" target="_blank" rel="noopener noreferrer">構成図を大きく開く ↗</a></p>
+          <h4>主な処理の流れ</h4>
+          <ol class="architecture-steps">
+            <li><strong>記事・情報:</strong> バンドがSanity Studioで公開し、Next.jsサイトが取得。Sanityに接続できない場合はリポジトリ内の代替コンテンツを表示します。</li>
+            <li><strong>更新反映:</strong> 保護された再検証APIはSanityのWebhookを受け取り、対象ページを更新できる設計です。</li>
+            <li><strong>お問い合わせ:</strong> Next.jsのAPIで入力を検証し、Azure Communication Services Emailから担当の受信箱へ転送します。</li>
+          </ol>
+          <p class="architecture-note">現行のNext.jsルートに焦点を当てています。Bicepに残る旧構成のFunctionとStorageは図から除外しています。</p>
+        </figure>
+        <figure class="card architecture-card architecture-card--visual" id="speedspeak-architecture">
+          <figcaption><strong>SpeedSpeak</strong><span>Azure Static Web Apps · Azure Functions · Cosmos DB · Azure OpenAI</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/speedspeak-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="SpeedSpeakの構成図を原寸で開く">
+              <img src="/diagrams/speedspeak-architecture.svg" width="1200" height="610" loading="lazy" alt="Azure Static Web AppsのWeb版とiOSアプリがAzure FunctionsのAPIを呼ぶ。カードと単語キャッシュはCosmos DB、キャッシュにない単語の解説はAzure OpenAIを利用。学習履歴は端末内に保存。">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/speedspeak-architecture.svg" target="_blank" rel="noopener noreferrer">構成図を大きく開く ↗</a></p>
+          <h4>主な処理の流れ</h4>
+          <ol class="architecture-steps">
+            <li><strong>画面:</strong> Webは静的サイトを配信し、iOSはCapacitorで同じフロントエンドをアプリに組み込みます。</li>
+            <li><strong>学習カード:</strong> GetCardsがCosmos DBから取得し、必要に応じて同梱のサンプルカードを使います。</li>
+            <li><strong>単語解説:</strong> LookupVocabularyAIはCosmos DBのキャッシュを確認し、未登録なら利用制限を判定してAzure OpenAIを呼び、結果を保存します。</li>
+            <li><strong>学習履歴:</strong> 履歴とお気に入りはブラウザまたはiOS端末に保存します。</li>
+          </ol>
+          <p class="architecture-note">BicepでAzureリソースを定義しています。図は現在のアプリが呼び出すサービスを示しています。</p>
+        </figure>
+        <figure class="card architecture-card" id="write-diary-architecture">
           <figcaption><strong>WriteDiary AI</strong><span>認証付きのAI添削</span></figcaption>
           <ol class="architecture-flow">
             <li>Flutter iOSアプリ</li><li>Amazon Cognito</li><li>API Gateway + Lambda</li><li>Amazon Bedrock + DynamoDB</li>
           </ol>
           <p>CDKでサーバーレスのバックエンドを定義し、認証されたリクエストで添削・復習データを扱います。</p>
         </figure>
-        <figure class="card architecture-card">
+        <figure class="card architecture-card" id="vpn-architecture">
           <figcaption><strong>サーバーレス VPN コントロール</strong><span>管理操作とスケジュール実行</span></figcaption>
           <ol class="architecture-flow">
             <li>CloudFront + S3の画面</li><li>API Gateway + Lambda</li><li>Systems Manager</li><li>EC2 + WireGuard</li>

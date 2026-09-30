@@ -20,6 +20,7 @@ extraScripts:
         <div class="nav-links-group" aria-label="Sections">
           <span class="nav-group-label">Sections</span>
           <a href="#projects">Projects</a>
+          <a href="#project-architecture">Architecture</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#certifications">Certifications</a>
@@ -89,6 +90,7 @@ extraScripts:
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://www.neveregressofficial.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
+              <a class="cta-button ghost" href="#never-egress-architecture">View infrastructure diagram</a>
             </div>
           </div>
         </article>
@@ -137,6 +139,7 @@ extraScripts:
             <div class="project-links">
               <a class="cta-button ghost" href="https://speedspeak.jp" target="_blank" rel="noopener noreferrer">Visit app</a>
               <a class="cta-button ghost" href="https://apps.apple.com/us/app/speedspeak/id6762238764" target="_blank" rel="noopener noreferrer">App Store</a>
+              <a class="cta-button ghost" href="#speedspeak-architecture">View infrastructure diagram</a>
             </div>
           </div>
         </article>
@@ -159,6 +162,7 @@ extraScripts:
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://apps.apple.com/app/write-diary-ai/id6762253383" target="_blank" rel="noopener noreferrer">App Store</a>
+              <a class="cta-button ghost" href="#write-diary-architecture">View infrastructure diagram</a>
             </div>
           </div>
         </article>
@@ -180,6 +184,7 @@ extraScripts:
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+              <a class="cta-button ghost" href="#vpn-architecture">View infrastructure diagram</a>
             </div>
           </div>
         </article>
@@ -205,20 +210,53 @@ extraScripts:
           </div>
         </article>
       </div>
-      <div class="section-header architecture-heading" id="aws-architecture">
-        <span class="eyebrow">AWS architecture</span>
-        <h3>High-level views of my own projects</h3>
-        <p>These diagrams show service roles and data flow only. They exclude accounts, network details, credentials, and client environments.</p>
+      <div class="section-header architecture-heading" id="project-architecture">
+        <span class="eyebrow">Project architecture</span>
+        <h3>Infrastructure and request flows</h3>
+        <p>Never Egress and SpeedSpeak run on Azure; WriteDiary AI and VPN Control use AWS. The diagrams show application paths without account, network, or credential details.</p>
       </div>
       <div class="card-grid architecture-grid">
-        <figure class="card architecture-card">
+        <figure class="card architecture-card architecture-card--visual" id="never-egress-architecture">
+          <figcaption><strong>Never Egress</strong><span>Azure Static Web Apps · Sanity · Azure Communication Services</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/never-egress-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the Never Egress infrastructure diagram at full size">
+              <img src="/diagrams/never-egress-architecture.svg" width="1200" height="535" loading="lazy" alt="Visitor reaches the Next.js site on Azure Static Web Apps; the site reads Sanity content and forwards contact requests through Azure Communication Services Email. GitHub Actions deploys the site.">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/never-egress-architecture.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram ↗</a></p>
+          <h4>How it works</h4>
+          <ol class="architecture-steps">
+            <li><strong>Content:</strong> Band editors publish in Sanity Studio; the Next.js site reads published content, with repository fallback if Sanity is unavailable.</li>
+            <li><strong>Refresh:</strong> The protected revalidation route accepts a Sanity webhook to refresh affected pages after publication.</li>
+            <li><strong>Contact:</strong> The Next.js API validates a submission, then Azure Communication Services Email forwards it to the project inbox.</li>
+          </ol>
+          <p class="architecture-note">This view focuses on the active Next.js routes. Older Function and Storage resources in the Bicep template are omitted.</p>
+        </figure>
+        <figure class="card architecture-card architecture-card--visual" id="speedspeak-architecture">
+          <figcaption><strong>SpeedSpeak</strong><span>Azure Static Web Apps · Azure Functions · Cosmos DB · Azure OpenAI</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/speedspeak-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the SpeedSpeak infrastructure diagram at full size">
+              <img src="/diagrams/speedspeak-architecture.svg" width="1200" height="610" loading="lazy" alt="The web app on Azure Static Web Apps and the bundled iOS app call Azure Functions. The API uses Cosmos DB for cards and vocabulary cache, and Azure OpenAI on cache misses. Learning history stays on device.">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/speedspeak-architecture.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram ↗</a></p>
+          <h4>How it works</h4>
+          <ol class="architecture-steps">
+            <li><strong>Clients:</strong> The browser uses a static site; the iOS app bundles the same frontend through Capacitor.</li>
+            <li><strong>Cards:</strong> GetCards reads Cosmos DB and can fall back to bundled sample cards.</li>
+            <li><strong>Vocabulary:</strong> LookupVocabularyAI checks the Cosmos cache first; a guarded cache miss calls Azure OpenAI and caches the result.</li>
+            <li><strong>Progress:</strong> Learning history and favourites remain on the browser or iOS device.</li>
+          </ol>
+          <p class="architecture-note">Bicep defines the Azure resources; the flow above shows the services called by the current application.</p>
+        </figure>
+        <figure class="card architecture-card" id="write-diary-architecture">
           <figcaption><strong>WriteDiary AI</strong><span>Authenticated writing feedback</span></figcaption>
           <ol class="architecture-flow">
             <li>Flutter iOS app</li><li>Amazon Cognito</li><li>API Gateway + Lambda</li><li>Amazon Bedrock + DynamoDB</li>
           </ol>
           <p>CDK defines the serverless backend; the app sends authenticated requests for correction and review data.</p>
         </figure>
-        <figure class="card architecture-card">
+        <figure class="card architecture-card" id="vpn-architecture">
           <figcaption><strong>Serverless VPN Control</strong><span>Control path and scheduled actions</span></figcaption>
           <ol class="architecture-flow">
             <li>CloudFront + S3 UI</li><li>API Gateway + Lambda</li><li>Systems Manager</li><li>EC2 + WireGuard</li>
