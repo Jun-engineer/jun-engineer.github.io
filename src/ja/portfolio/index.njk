@@ -65,10 +65,10 @@ extraScripts:
       <div class="section-header">
         <span class="eyebrow">プロジェクト</span>
         <h2>主な開発プロジェクト</h2>
-        <p>案件ごとの課題、設計判断、公開した成果を紹介します。本人所有のAWS構成も下に掲載しています。</p>
+        <p>案件ごとの設計判断と公開した成果を紹介します。各プロジェクトの構成図と処理の流れも下に掲載しています。</p>
       </div>
       <div class="card-grid projects-grid">
-        <article class="card project-card project-featured" id="never-egress">
+        <article class="card project-card" id="never-egress">
           <div class="project-image">
             <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress バンドサイト">
           </div>
@@ -78,11 +78,7 @@ extraScripts:
             <p>
               バンドの世界観に合わせて制作した日英対応の公式サイト。ニュース、ライブ情報、メディア、グッズを集約し、メンバー自身が更新できる管理画面を実装。お問い合わせフォームには Azure Communication Services を利用しています。
             </p>
-            <dl class="project-proof">
-              <div><dt>課題</dt><dd>ファン向け情報を一か所に集め、バンド自身が最新情報を更新できるようにする。</dd></div>
-              <div><dt>設計判断</dt><dd>日英対応のNext.jsサイトとSanity CMSを組み合わせ、問い合わせはAzureで処理。</dd></div>
-              <div><dt>公開した成果</dt><dd>ニュース、ライブ、メディア、グッズ導線を備え、依頼主が更新できる公式サイト。</dd></div>
-            </dl>
+            <p class="project-result"><strong>公開した成果:</strong> ニュース、ライブ、メディア、グッズ導線と、依頼主が更新できる管理画面を備えた公式サイト。</p>
             <p class="tagline-list">
               <span>担当: 設計、フロントエンド開発、インフラ、CI/CD</span>
               <span>技術: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
@@ -95,7 +91,7 @@ extraScripts:
           </div>
         </article>
 
-        <article class="card project-card project-featured" id="whv-compass">
+        <article class="card project-card" id="whv-compass">
           <div class="project-image">
             <img class="project-image-contain" loading="lazy" src="/photo/whv-compass.png" alt="オーストラリアワーホリコンパスのサイト画像">
           </div>
@@ -103,19 +99,17 @@ extraScripts:
             <h3>オーストラリアワーホリコンパス</h3>
             <p class="project-context">自社プロジェクト · <a href="https://nammoku-solutions.com/works/" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
             <p>
-              渡航準備から現地生活・仕事・ビザ・帰国まで、オーストラリアのワーキングホリデー情報を整理した日本語プラットフォーム。記事検索、ニュース、掲示板、会員機能を備えています。
+              渡航準備から現地生活・仕事・ビザ・帰国まで、オーストラリアのワーキングホリデー情報を整理した日本語プラットフォーム。記事検索、コミュニティ、会員機能、募集・応募の導線を備えています。
             </p>
-            <dl class="project-proof">
-              <div><dt>課題</dt><dd>渡航の各段階で必要な情報を探しやすくし、後から見返せるようにする。</dd></div>
-              <div><dt>設計判断</dt><dd>情報を段階別に整理し、Next.jsとSupabaseで検索・掲示板・会員機能を構築。</dd></div>
-              <div><dt>公開した成果</dt><dd>記事検索、ニュース、掲示板、会員機能を備えた日本語ガイド。</dd></div>
-            </dl>
+            <p class="project-result"><strong>公開した成果:</strong> 段階別のガイド、記事検索、コミュニティ、求人等の募集・応募機能を備えた公開サイト。</p>
             <p class="tagline-list">
               <span>担当: プロダクト設計、フルスタック開発、クラウド構成</span>
-              <span>技術: Next.js, React, TypeScript, Supabase</span>
+              <span>技術: Next.js, React, TypeScript, Supabase Auth / PostgreSQL / Storage</span>
+              <span>ホスティング: Vercel</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://whv-guide-australia.com/" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+              <a class="cta-button ghost" href="#whv-compass-architecture">インフラ構成図を見る</a>
             </div>
           </div>
         </article>
@@ -213,7 +207,7 @@ extraScripts:
       <div class="section-header architecture-heading" id="project-architecture">
         <span class="eyebrow">プロジェクト構成図</span>
         <h3>インフラと処理の流れ</h3>
-        <p>Never EgressとSpeedSpeakはAzure、WriteDiary AIとVPN管理はAWSの構成です。アカウント・ネットワーク・認証情報の詳細を除き、アプリの処理経路を示します。</p>
+        <p>Never EgressとSpeedSpeakはAzure、WriteDiary AIとVPN管理はAWS、ワーホリコンパスはVercelとSupabaseの構成です。アカウント・ネットワーク・認証情報の詳細を除き、主要な処理経路を示します。</p>
       </div>
       <div class="card-grid architecture-grid">
         <figure class="card architecture-card architecture-card--visual" id="never-egress-architecture">
@@ -232,6 +226,22 @@ extraScripts:
           </ol>
           <p class="architecture-note">現行のNext.jsルートに焦点を当てています。Bicepに残る旧構成のFunctionとStorageは図から除外しています。</p>
         </figure>
+        <figure class="card architecture-card architecture-card--visual" id="whv-compass-architecture">
+          <figcaption><strong>オーストラリアワーホリコンパス</strong><span>Vercel · Next.js · Supabase</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/whv-compass-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="ワーホリコンパスの構成図を原寸で開く">
+              <img src="/diagrams/whv-compass-architecture.svg" width="1200" height="555" loading="lazy" alt="VercelのNext.jsサイトが記事と検索画面を配信し、会員認証・コミュニティ等のデータ・画像をSupabaseで扱う構成。">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/whv-compass-architecture.svg" target="_blank" rel="noopener noreferrer">構成図を大きく開く ↗</a></p>
+          <h4>主な処理の流れ</h4>
+          <ol class="architecture-steps">
+            <li><strong>記事検索:</strong> リポジトリ管理の記事から検索用インデックスを作り、ブラウザで記事を探します。</li>
+            <li><strong>会員・コミュニティ:</strong> Supabase Authでログインし、プロフィール、掲示板、募集・応募のデータをPostgreSQLで扱います。</li>
+            <li><strong>メディア:</strong> 投稿等で使う画像はSupabase Storageで扱います。</li>
+          </ol>
+          <p class="architecture-note">公開サイトのAIアシスタントとAIニュース自動処理は現在停止中のため、稼働経路として図示していません。</p>
+        </figure>
         <figure class="card architecture-card architecture-card--visual" id="speedspeak-architecture">
           <figcaption><strong>SpeedSpeak</strong><span>Azure Static Web Apps · Azure Functions · Cosmos DB · Azure OpenAI</span></figcaption>
           <div class="diagram-frame">
@@ -249,19 +259,37 @@ extraScripts:
           </ol>
           <p class="architecture-note">BicepでAzureリソースを定義しています。図は現在のアプリが呼び出すサービスを示しています。</p>
         </figure>
-        <figure class="card architecture-card" id="write-diary-architecture">
-          <figcaption><strong>WriteDiary AI</strong><span>認証付きのAI添削</span></figcaption>
-          <ol class="architecture-flow">
-            <li>Flutter iOSアプリ</li><li>Amazon Cognito</li><li>API Gateway + Lambda</li><li>Amazon Bedrock + DynamoDB</li>
+        <figure class="card architecture-card architecture-card--visual" id="write-diary-architecture">
+          <figcaption><strong>WriteDiary AI</strong><span>Cognito · API Gateway · Lambda · DynamoDB · Bedrock · S3</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/write-diary-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="WriteDiary AIの構成図を原寸で開く">
+              <img src="/diagrams/write-diary-architecture.svg" width="1200" height="590" loading="lazy" alt="FlutterアプリがCognitoでログインし、API GatewayとLambda経由で日記・復習カードをDynamoDBに保存。手書き認識と添削はBedrockを使い、スキャン画像は必要に応じS3へ保存。">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/write-diary-architecture.svg" target="_blank" rel="noopener noreferrer">構成図を大きく開く ↗</a></p>
+          <h4>主な処理の流れ</h4>
+          <ol class="architecture-steps">
+            <li><strong>認証と保存:</strong> Cognitoでログインし、認証付きAPIからLambdaを呼んで日記や復習カードをDynamoDBへ保存します。</li>
+            <li><strong>手書き取り込み:</strong> 画像をスキャンAPIへ渡し、BedrockのNovaで文字を読み取ります。日記作成時に画像も送った場合はS3へ保存します。</li>
+            <li><strong>添削:</strong> Lambdaが日記を読み、Bedrockで添削した結果をDynamoDBの日記に記録します。</li>
           </ol>
-          <p>CDKでサーバーレスのバックエンドを定義し、認証されたリクエストで添削・復習データを扱います。</p>
+          <p class="architecture-note">CDKと現行のLambda処理に基づく図です。旧READMEに残る未実装のAI連携説明や、使用終了した利用量テーブルは含めていません。</p>
         </figure>
-        <figure class="card architecture-card" id="vpn-architecture">
-          <figcaption><strong>サーバーレス VPN コントロール</strong><span>管理操作とスケジュール実行</span></figcaption>
-          <ol class="architecture-flow">
-            <li>CloudFront + S3の画面</li><li>API Gateway + Lambda</li><li>Systems Manager</li><li>EC2 + WireGuard</li>
+        <figure class="card architecture-card architecture-card--visual" id="vpn-architecture">
+          <figcaption><strong>サーバーレス VPN コントロール</strong><span>CloudFront · API Gateway · Lambda · EC2 · Systems Manager</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/vpn-control-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="VPNコントロールの構成図を原寸で開く">
+              <img src="/diagrams/vpn-control-architecture.svg" width="1200" height="610" loading="lazy" alt="S3の管理画面をCloudFrontが配信。ブラウザからAPI GatewayとLambdaを通じてEC2のWireGuardを管理し、ピア登録はSystems Managerを使用。EventBridgeが定期処理を起動し、SNSが起動通知を送る。">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/vpn-control-architecture.svg" target="_blank" rel="noopener noreferrer">構成図を大きく開く ↗</a></p>
+          <h4>主な処理の流れ</h4>
+          <ol class="architecture-steps">
+            <li><strong>管理操作:</strong> CloudFrontとS3の画面からAPI Gatewayを経由し、LambdaでEC2の起動・停止・状態確認を実行します。</li>
+            <li><strong>ピア登録:</strong> 管理用APIからLambdaを呼び、Systems Manager経由でWireGuardの設定を更新します。</li>
+            <li><strong>自動処理:</strong> EventBridge Schedulerが定時停止と通信量確認を実行。起動時にはSNSから通知します。</li>
           </ol>
-          <p>EventBridge Schedulerで停止処理と通信量チェックを実行し、起動時はSNSで通知します。<a href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">公開リポジトリ</a>も参照できます。</p>
+          <p class="architecture-note">Terraformに基づく制御経路です。VPN通信そのものはEC2のWireGuardを通り、管理APIとは別です。</p>
         </figure>
       </div>
     </div>

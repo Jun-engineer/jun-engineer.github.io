@@ -68,7 +68,7 @@ extraScripts:
         <p>What each project needed, what I built, and what is available to explore. Public architecture examples follow the projects.</p>
       </div>
       <div class="card-grid projects-grid">
-        <article class="card project-card project-featured" id="never-egress">
+        <article class="card project-card" id="never-egress">
           <div class="project-image">
             <img loading="lazy" src="/photo/never-egress.jpg" alt="Never Egress band website">
           </div>
@@ -78,11 +78,7 @@ extraScripts:
             <p>
               Commissioned bilingual website for a music band, bringing news, live dates, media, and merchandise together. A self-service admin panel lets the band update content; the contact form uses Azure Communication Services.
             </p>
-            <dl class="project-proof">
-              <div><dt>Challenge</dt><dd>Give fans one place for current information while letting the band maintain it themselves.</dd></div>
-              <div><dt>Decision</dt><dd>Pair a bilingual Next.js site with Sanity CMS and an Azure-hosted contact flow.</dd></div>
-              <div><dt>Delivered</dt><dd>A live website with news, shows, media, merchandise links, and client-managed updates.</dd></div>
-            </dl>
+            <p class="project-result"><strong>Delivered:</strong> A live site with news, shows, media, merchandise links, and a client-managed content studio.</p>
             <p class="tagline-list">
               <span>My role: Architecture, frontend development, infrastructure, and CI/CD</span>
               <span>Stack: Next.js, React, TypeScript, Sanity CMS, Bicep</span>
@@ -95,7 +91,7 @@ extraScripts:
           </div>
         </article>
 
-        <article class="card project-card project-featured" id="whv-compass">
+        <article class="card project-card" id="whv-compass">
           <div class="project-image">
             <img class="project-image-contain" loading="lazy" src="/photo/whv-compass.png" alt="Australia Working Holiday Compass site graphic">
           </div>
@@ -103,19 +99,17 @@ extraScripts:
             <h3>Australia Working Holiday Compass</h3>
             <p class="project-context">Own project · <a href="https://nammoku-solutions.com/works/en.html" target="_blank" rel="noopener noreferrer">Nammoku Solutions</a></p>
             <p>
-              Japanese-language platform guiding people through an Australian working holiday, from preparation to local life, work, visas, and returning home. Includes article search, news, a community board, and member accounts.
+              Japanese-language platform guiding people through an Australian working holiday, from preparation to local life, work, visas, and returning home. Includes article search, community discussions, accounts, and job listings with applications.
             </p>
-            <dl class="project-proof">
-              <div><dt>Challenge</dt><dd>Make information across the working holiday journey easier to find and revisit.</dd></div>
-              <div><dt>Decision</dt><dd>Organise guidance by stage and add search, community discussion, and member features with Next.js and Supabase.</dd></div>
-              <div><dt>Delivered</dt><dd>A published Japanese-language guide with searchable articles, news, a board, and accounts.</dd></div>
-            </dl>
+            <p class="project-result"><strong>Delivered:</strong> A published, stage-based guide with article search, community discussions, and listings with applications.</p>
             <p class="tagline-list">
               <span>My role: Product design, full-stack development, and cloud architecture</span>
-              <span>Stack: Next.js, React, TypeScript, Supabase</span>
+              <span>Stack: Next.js, React, TypeScript, Supabase Auth / PostgreSQL / Storage</span>
+              <span>Hosting: Vercel</span>
             </p>
             <div class="project-links">
               <a class="cta-button ghost" href="https://whv-guide-australia.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
+              <a class="cta-button ghost" href="#whv-compass-architecture">View infrastructure diagram</a>
             </div>
           </div>
         </article>
@@ -213,7 +207,7 @@ extraScripts:
       <div class="section-header architecture-heading" id="project-architecture">
         <span class="eyebrow">Project architecture</span>
         <h3>Infrastructure and request flows</h3>
-        <p>Never Egress and SpeedSpeak run on Azure; WriteDiary AI and VPN Control use AWS. The diagrams show application paths without account, network, or credential details.</p>
+        <p>Never Egress and SpeedSpeak run on Azure; WriteDiary AI and VPN Control use AWS; WHV Compass uses Vercel and Supabase. These diagrams show the main application paths without account, network, or credential details.</p>
       </div>
       <div class="card-grid architecture-grid">
         <figure class="card architecture-card architecture-card--visual" id="never-egress-architecture">
@@ -232,6 +226,22 @@ extraScripts:
           </ol>
           <p class="architecture-note">This view focuses on the active Next.js routes. Older Function and Storage resources in the Bicep template are omitted.</p>
         </figure>
+        <figure class="card architecture-card architecture-card--visual" id="whv-compass-architecture">
+          <figcaption><strong>Australia Working Holiday Compass</strong><span>Vercel · Next.js · Supabase</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/whv-compass-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the WHV Compass infrastructure diagram at full size">
+              <img src="/diagrams/whv-compass-architecture.svg" width="1200" height="555" loading="lazy" alt="Vercel hosts the Next.js site and article search interface; Supabase provides member authentication, community data in Postgres, and media storage.">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/whv-compass-architecture.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram ↗</a></p>
+          <h4>How it works</h4>
+          <ol class="architecture-steps">
+            <li><strong>Article search:</strong> A client-side index built from repository-managed articles lets visitors find guidance.</li>
+            <li><strong>Accounts and community:</strong> Supabase Auth signs members in; Postgres holds profiles, discussions, and listings with applications.</li>
+            <li><strong>Media:</strong> Supabase Storage handles images used by the site.</li>
+          </ol>
+          <p class="architecture-note">The public AI assistant and AI news automation are paused, so they are not shown as active paths.</p>
+        </figure>
         <figure class="card architecture-card architecture-card--visual" id="speedspeak-architecture">
           <figcaption><strong>SpeedSpeak</strong><span>Azure Static Web Apps · Azure Functions · Cosmos DB · Azure OpenAI</span></figcaption>
           <div class="diagram-frame">
@@ -249,19 +259,37 @@ extraScripts:
           </ol>
           <p class="architecture-note">Bicep defines the Azure resources; the flow above shows the services called by the current application.</p>
         </figure>
-        <figure class="card architecture-card" id="write-diary-architecture">
-          <figcaption><strong>WriteDiary AI</strong><span>Authenticated writing feedback</span></figcaption>
-          <ol class="architecture-flow">
-            <li>Flutter iOS app</li><li>Amazon Cognito</li><li>API Gateway + Lambda</li><li>Amazon Bedrock + DynamoDB</li>
+        <figure class="card architecture-card architecture-card--visual" id="write-diary-architecture">
+          <figcaption><strong>WriteDiary AI</strong><span>Cognito · API Gateway · Lambda · DynamoDB · Bedrock · S3</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/write-diary-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the WriteDiary AI infrastructure diagram at full size">
+              <img src="/diagrams/write-diary-architecture.svg" width="1200" height="590" loading="lazy" alt="The Flutter app signs in through Cognito and saves diaries and review cards through API Gateway and Lambda to DynamoDB. Bedrock handles handwriting recognition and corrections; S3 optionally stores scan images.">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/write-diary-architecture.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram ↗</a></p>
+          <h4>How it works</h4>
+          <ol class="architecture-steps">
+            <li><strong>Sign-in and storage:</strong> Cognito authorizes API calls; Lambda writes diaries and review cards to DynamoDB.</li>
+            <li><strong>Handwriting:</strong> The scan API sends the image to Bedrock Nova for transcription. S3 stores an image if one is included when creating a diary.</li>
+            <li><strong>Correction:</strong> Lambda reads the diary, invokes Bedrock for feedback, and writes the result back to DynamoDB.</li>
           </ol>
-          <p>CDK defines the serverless backend; the app sends authenticated requests for correction and review data.</p>
+          <p class="architecture-note">Based on CDK and the current Lambda handlers. Outdated README guidance about unimplemented AI integration and legacy usage tables is excluded.</p>
         </figure>
-        <figure class="card architecture-card" id="vpn-architecture">
-          <figcaption><strong>Serverless VPN Control</strong><span>Control path and scheduled actions</span></figcaption>
-          <ol class="architecture-flow">
-            <li>CloudFront + S3 UI</li><li>API Gateway + Lambda</li><li>Systems Manager</li><li>EC2 + WireGuard</li>
+        <figure class="card architecture-card architecture-card--visual" id="vpn-architecture">
+          <figcaption><strong>Serverless VPN Control</strong><span>CloudFront · API Gateway · Lambda · EC2 · Systems Manager</span></figcaption>
+          <div class="diagram-frame">
+            <a href="/diagrams/vpn-control-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the VPN Control infrastructure diagram at full size">
+              <img src="/diagrams/vpn-control-architecture.svg" width="1200" height="610" loading="lazy" alt="CloudFront serves the S3 control panel. The browser calls API Gateway and Lambda to manage EC2 WireGuard, with peer registration through Systems Manager. EventBridge invokes scheduled jobs and SNS sends start notifications.">
+            </a>
+          </div>
+          <p class="diagram-open"><a href="/diagrams/vpn-control-architecture.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram ↗</a></p>
+          <h4>How it works</h4>
+          <ol class="architecture-steps">
+            <li><strong>Controls:</strong> The CloudFront and S3 UI calls API Gateway; Lambda starts, stops, and checks the EC2 instance.</li>
+            <li><strong>Peer setup:</strong> The admin API invokes Lambda, which updates WireGuard configuration through Systems Manager.</li>
+            <li><strong>Automation:</strong> EventBridge Scheduler triggers a scheduled stop and traffic checks; SNS sends a start notification.</li>
           </ol>
-          <p>EventBridge Scheduler triggers shutdown and traffic checks; SNS sends start notifications. See the <a href="https://github.com/Jun-engineer/vpn-server" target="_blank" rel="noopener noreferrer">public repository</a>.</p>
+          <p class="architecture-note">The diagram shows the Terraform control plane. VPN traffic itself passes through WireGuard on EC2, separately from the admin API.</p>
         </figure>
       </div>
     </div>
